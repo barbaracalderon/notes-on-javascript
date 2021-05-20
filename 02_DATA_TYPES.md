@@ -16,7 +16,7 @@ Undefined | Value taken by a variable that is not yet defined (empty value) | ``
 Null | Also means empty value | ```object```*
 Symbol | Value that is unique and cannot be changed | ```symbol```
 BigInt | Larger integers than the Number type can hold. To create a BigInt, simply append ```n``` to the end of the integer. Or use the ```BigInt()``` constructor | ```bigint```
-``` ```| ```*``` this is considered a bug in JS
+```*```| this is considered a bug in JS
 
 **REMEMBER**
 
@@ -48,8 +48,8 @@ Boolean | ```True``` ou ```false```. Usado para tomada de decisão | ```boolean`
 Undefined | Valor tomado por uma variável que ainda não foi definida (valor vazio) | ```undefined```
 Null | Também significa valor vazio | ```object```*
 Symbol | Valor que é único e não pode ser alterado | ```symbol```
-BigInt | Inteiros maiores que os suportados pelo ```number```. Pra criar um valor do tipo BigInt, deve adicionar no final do número um ```n```. Ou usar o construtor ```BigInt()```` | ```bigint```
-``` ```| ```*``` é considerado um bug em JS
+BigInt | Inteiros maiores que os suportados pelo ```number```. Pra criar um valor do tipo BigInt, deve adicionar no final do número um ```n```. Ou usar o construtor ```BigInt()``` | ```bigint```
+```*```| é considerado um bug em JS
 
 **LEMBRETE**
 
