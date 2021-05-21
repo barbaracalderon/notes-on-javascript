@@ -30,7 +30,7 @@ Operators | About
 ```++``` | Add one (increase by 1)
 ```--``` | Subtract one (decrease by 1)
 
-## Relational operators
+## Comparison operators
 
 Operators | About
 :-------- | :-----
