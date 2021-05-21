@@ -2,7 +2,7 @@
 
 They are divided into five categories.
 
-The order of use is:
+The order of precedence is:
 
 1. Math
 2. Relational
