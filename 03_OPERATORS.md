@@ -61,7 +61,15 @@ let bonus = profit * (profit > 1000 ? 0.10 : 0.15)
 
 /*The above line reads as follow:
 If profit is greater than 1000, then multiply
-it by 0.10; else multiply it by 0.15*/
+it by 0.10; else multiply it by 0.15
+Then, store the result inside variable 'bonus'*/
+```
+
+Another example.
+
+```javascript
+const drink = age >= 18 ? 'wine' : 'water';
+// the result is stored in 'drink'
 ```
 
 Operators | About
@@ -135,10 +143,19 @@ let bonus = lucro * (lucro > 1000 ? 0.10 : 0.15)
 
 /*A linha de cima é lida assim:
 Se o lucro é maior que 1000, então multiplique
-ele por 0.10; senão, multiplique ele por 0.15*/
+ele por 0.10; senão, multiplique ele por 0.15
+Depois, guarde o resultado na variável 'bonus'*/
+```
+
+Outro exemplo.
+
+```javascript
+const drink = idade >= 18 ? 'vinho' : 'água';
+// O resultado é guardado em 'drink'
 ```
 
 Operadores | Sobre
 :-------- | :-----
 ```?``` | Tomada de decisão
 ```:``` | Separa o ```então``` (primeira parte) do ```senão``` (segunda parte)
+
