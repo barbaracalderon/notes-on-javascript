@@ -113,6 +113,32 @@ console.log(yearsUntilRetirement(1991, 'Jonas'));
 // > Jonas retires in 19 years.
 ```
 
+## Functions calling other Functions
+
+It's a function inside a function!
+
+```javascript
+
+// Function #01
+function cutFruitPieces(fruit) {
+    return fruit * 4
+}
+
+// Function #02
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges)
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`
+
+    return juice
+}
+
+// The results
+
+console.log(fruitProcessor(2, 3));
+// > Juice with 8 pieces of apple and 12 pieces of orange.
+```
+
 ---
 ---
 
@@ -226,4 +252,29 @@ const anosAteAposentar = (anoNascimento, primeiroNome) => {
 
 console.log(anosAteAposentar(1991, 'Jonas'));
 // > Jonas se aposenta em 19 anos.
+```
+## Função chamando outra Função
+
+É uma função dentro de outra função.
+
+```javascript
+
+// Função #01
+function cortarFrutaPedacos(fruta) {
+    return fruta * 4
+}
+
+// Function #02
+function fruitProcessor(macas, laranjas) {
+    const pedacosMaca = cortarFrutaPedacos(macas);
+    const pedacosLaranja = cortarFrutaPedacos(laranjas)
+    const suco = `Suco com ${pedacosMaca} pedaços de maçã e ${pedacosLaranja} pedaços de laranja.`
+    
+    return suco
+}
+
+// O resultado
+
+console.log(fruitProcessor(2, 3));
+// > Suco com 8 pedaços de maçã e 12 pedaços de laranja.
 ```
