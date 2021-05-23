@@ -2,6 +2,8 @@
 
 The two most important things in JS: **arrays** and objects.
 
+Most important thing about an array: order matters.
+
 Basic material.
 
 ```javascript
@@ -57,6 +59,8 @@ Method | What | Meaning
 # PT: Arrays
 
 As duas coisas mais importantes em JS são **array** e objetos. 
+
+Coisa mais importante do array: **ordem importa**.
 
 Material básico abaixo.
 
