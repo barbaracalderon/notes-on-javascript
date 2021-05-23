@@ -15,7 +15,8 @@
 03_OPERATORS.md | Math operators, assignment operators, comparison operators, logic operators, ternary operators
 04_CONVERSION_COERCION.md | Template string; string to number; number to string; type coercion; falsy values; truthy values
 05_SWITCH.md | A switch structure
-06_FUNCTIONS.md | Activate the ```stric mode``` in JS; Function Declaration; Function Expression; Arrow Function; *to be continued*...
+06_FUNCTIONS.md | Activate the ```stric mode``` in JS; Function Declaration; Function Expression; Arrow Function; Function inside a Function
+07_ARRAYS.md | Creating an Array;
 To be continued... | ...
 
  ---
@@ -37,5 +38,6 @@ ARQUIVOS | CONTEÚDOS
 03_OPERATORS.md | **Operadores**: matemáticos, de atribuição, relacionais, lógicos, ternários
 04_CONVERSION_COERCION.md | Template string; string para número; número para string; tipagem forçada; valores falsy e truthy
 05_SWITCH.md | Estrutura de um switch
-06_FUNCTIONS.md | Ativar ```stric mode``` em JS; funções declarativas; funções expressivas; arrow functions; *continua*...
+06_FUNCTIONS.md | Ativar ```stric mode``` em JS; funções declarativas; funções expressivas; arrow functions; Função chamando Função
+07_ARRAYS.md | Criando Arrays;
 Continua... | ...
