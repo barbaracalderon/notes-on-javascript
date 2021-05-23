@@ -4,7 +4,7 @@ As said before, arrays and **objects** are the two most important pieces in Java
 
 An array is used to store multiple related values in a variable. 
 
-We can't name each array item separately: the only thing we can do is access them throrgh an index. That's all.
+We can't firstName each array item separately: the only thing we can do is access them throrgh an index. That's all.
 
 Check the following example.
 
@@ -16,7 +16,7 @@ const jonasArray = [
     'Jonas',
     'Schmedtmann',
     2037 - 1991;
-    'professor',
+    'teacher',
     ['Michael', 'Peter', 'Steven']
 ]
 
@@ -35,23 +35,23 @@ Now, compare it to the following object.
 // OBJECT - { }
 // Order does NOT matter.
 
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 /* To access the item:
-jonasObjeto.nome or          jonasObjeto['nome']
-jonasObjeto.sobrenome or           jonasObjeto[.sobrenome']
-jonasObjeto.idade or                jonasObjeto['idade']
-jonasObjeto.profissao or                jonasObjeto['profissao']
-jonasObjeto.amigos or            jonasObjeto['amigos']
+jonasObject.firstName or          jonasObject['firstName']
+jonasObject.lastName or           jonasObject[.lastName']
+jonasObject.age or                jonasObject['age']
+jonasObject.job or                jonasObject['job']
+jonasObject.friends or            jonasObject['friends']
 */
 ```
 
-The ```jonasObjeto``` has 5 properties: ```nome, sobrenome, idade, profissao, amigos```. 
+The ```jonasObject``` has 5 properties: ```firstName, lastName, age, job, friends```. 
 
 The main difference is **the order of the properties DOES NOT matter at all**.
 
@@ -61,48 +61,48 @@ You can access an object property in both ways - either through dot notation or 
 
 But there is a difference in between then.
 
-To access via dot notation, **you gotta know the name of the variable that holds that value**. Then, all you gotta do is write that name after the dot. 
+To access via dot notation, **you gotta know the firstName of the variable that holds that value**. Then, all you gotta do is write that firstName after the dot. 
 
 Like this.
 
 ```javascript
 // DOT NOTATION
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 
-console.log(jonasObjeto.nome)   // > Jonas
-console.log(jonasObjeto.sobrenome)    // > Schmedtmann
+console.log(jonasObject.firstName)   // > Jonas
+console.log(jonasObject.lastName)    // > Schmedtmann
 ```
 
 Now, through the bracket notation you have two options: 
 
-1. to know the variable name that holds the value you want
-2. to know first point here and also manidade an expression that will result in that variable name
+1. to know the variable firstName that holds the value you want
+2. to know first point here and also manage an expression that will result in that variable firstName
 
 Check it out.
 
 ```javascript
 // BRACKET NOTATION
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 
-console.log(jonasObjeto['sobrenome'])  // > Schmedtmann
+console.log(jonasObject['lastName'])  // > Schmedtmann
 
-const nameKey = 'Name';
+const nameKey = 'firstName';
 
-console.log(jonasObjeto['first' + nameKey]);    // > Jonas
-console.log(jonasObjeto['last' + nameKey]);     // > Schmedtmann
-// PS: nameKey holds a string value of 'Name'
+console.log(jonasObject['first' + nameKey]);    // > Jonas
+console.log(jonasObject['last' + nameKey]);     // > Schmedtmann
+// PS: nameKey holds a string value of 'firstName'
 // (concatenation is used!)
 ```
 
@@ -110,18 +110,18 @@ Another example.
 
 ```javascript
 // BRACKET NOTATION
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 
-const interestedIn = prompt('What do you want to know about Jonas? Choose between nome, sobrenome, idade, profissao, amigos');
-// Let's imagine the user chose 'profissao': interestedIn = 'profissao'
+const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, friends');
+// Let's imagine the user chose 'job': interestedIn = 'job'
 
-console.log(jonas[interestedIn])    // > professor
+console.log(jonas[interestedIn])    // > teacher
 ```
 
 ## Add properties to an Object
@@ -130,27 +130,27 @@ Here's how you do it.
 
 ```javascript
 // BRACKET NOTATION
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 
-jonasObjeto.local = 'Portugal'
-jonasObjeto.curso = 'JavaScript'
+jonasObject.localization = 'Portugal'
+jonasObject.course = 'JavaScript'
 
-console.log(jonasObjeto)
+console.log(jonasObject)
 // >
 /*
-nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: (3) ['Michael', 'Peter', 'Steven']
-    local: 'Portugal',
-    curso: 'JavaScript'
+firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: (3) ['Michael', 'Peter', 'Steven']
+    localization: 'Portugal',
+    course: 'JavaScript'
 */
 ```
 ---
@@ -160,7 +160,19 @@ nome: 'Jonas',
 
 Como dito antes, arrays e **objetos** são as duas peças mais importantes em JavaScript. Assim como o array, um objeto também é uma Estrutura de Dados em JS. Então faz sentido comparar os dois.
 
-Um array é usado para guardar vários valores, relacionados entre si, dentro de uma variável. Não dá pra nomear cada item dentro de um array: a única coisa que podemos fazer é acessar o item por meio do índice. Só isso. 
+Um array é usado para guardar vários valores, relacionados entre si, dentro de uma variável. Não dá pra firstNamear cada item dentro de um array: a única coisa que podemos fazer é acessar o item por meio do índice. Só isso. 
+
+```javascript
+// TRADUÇÕES: EN -> PT
+jonasObject -> jonasObjeto
+firstName -> primeiroNome
+lastName -> ultimoNome
+age -> idade
+job -> profissao
+friends -> amigos
+localization -> localização
+course -> curso
+```
 
 Dá uma olhada no exemplo abaixo.
 
@@ -172,7 +184,7 @@ const jonasArray = [
     'Jonas',
     'Schmedtmann',
     2037 - 1991;
-    'professor',
+    'teacher',
     ['Michael', 'Peter', 'Steven']
 ]
 
@@ -190,23 +202,23 @@ Agora, compara com o próximo objeto.
 // OBJECT - { }
 // Ordem NÃO importa.
 
-const jonasObjeto = {
-    nome: 'Jonas',
-.sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven'] 
+const jonasObject = {
+    firstName: 'Jonas',
+.lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'] 
 }
 
 /* Para acessar:
-jonasObjeto.nome or          jonasObjeto['nome']
-jonasObjeto.sobrenome or     jonasObjeto[.sobrenome']
-jonasObjeto.idade or         jonasObjeto['idade']
-jonasObjeto.profissao or     jonasObjeto['profissao']
-jonasObjeto.amigos or        jonasObjeto['amigos']
+jonasObject.firstName or          jonasObject['firstName']
+jonasObject.lastName or           jonasObject[.lastName']
+jonasObject.age or                jonasObject['age']
+jonasObject.job or                jonasObject['job']
+jonasObject.friends or            jonasObject['friends']
 */
 ```
-O ```jonasObjeto``` tem 5 propriedades: ```nome,.sobrenome, idade, profissao, amigos```. 
+O ```jonasObject``` tem 5 propriedades: ```firstName,.lastName, age, job, friends```. 
 
 A principalmente diferença para um array é que **em um objeto, a ordem das propriedades NÃO importa de nada.**
 
@@ -216,27 +228,27 @@ Dá pra acessar as propriedades de um objeto de duas formas: pela notação de p
 
 Mas tem uma diferença entre eles.
 
-Para acessar via notação de ponto, **você deve saber o nome da propriedade que guarda o valor desejado**. Aí depois, você só precisa escrever esse nome depois do ponto. 
+Para acessar via notação de ponto, **você deve saber o firstName da propriedade que guarda o valor desejado**. Aí depois, você só precisa escrever esse firstName depois do ponto. 
 
 Da seguinte forma.
 
 ```javascript
 // NOTAÇÃO DE PONTO
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 
-console.log(jonasObjeto.nome)   // > Jonas
-console.log(jonasObjeto.sobrenome)    // > Schmedtmann
+console.log(jonasObject.firstName)   // > Jonas
+console.log(jonasObject.lastName)    // > Schmedtmann
 ```
 Agora, por meio da notação de colchetes, você tem duas opções:
 
-1. primeiro saber o nome da propriedade que guarda o valor desejado
-2. além de saber o ponto anterior, você também precisa criar uma expressão que vai resultar no nome dessa propriedade
+1. primeiro saber o firstName da propriedade que guarda o valor desejado
+2. além de saber o ponto anterior, você também precisa criar uma expressão que vai resultar no firstName dessa propriedade
 
 Leia o segundo ponto de novo.
 
@@ -244,38 +256,38 @@ Agora dá uma olhada no código debaixo.
 
 ```javascript
 // NOTAÇÃO POR COLCHETE
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 
-console.log(jonasObjeto['sobrenome'])  // > Schmedtmann
+console.log(jonasObject['lastName'])  // > Schmedtmann
 
-const nameKey = 'nome';    // variável "nameKey" guarda uma stirng
+const nameKey = 'firstName';    // variável "nameKey" guarda uma stirng
 
-console.log(jonasObjeto['' + nameKey]);    // > Jonas
-console.log(jonasObjeto['sobre' + nameKey]);     // > Schmedtmann
-// PS: nameKey guarda uma string com valor 'nome'
+console.log(jonasObject['' + nameKey]);    // > Jonas
+console.log(jonasObject['sobre' + nameKey]);     // > Schmedtmann
+// PS: nameKey guarda uma string com valor 'firstName'
 // (concatenação chega no resultado!)
 ```
 Outro exemplo.
 ```javascript
 // NOTAÇÃO POR COLCHETES
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 
-const interessadoEm = prompt('O que você quer saber sobre o Jonas: Escolha entre nome, sobrenome, idade, profissao, amigos');
-// Vamos imaginar que o usuário escolheu 'profissao': interessadoEm = 'profissao'
+const interessadoEm = prompt('O que você quer saber sobre o Jonas: Escolha entre firstName, lastName, age, job, friends');
+// Vamos imaginar que o usuário escolheu 'job': interessadoEm = 'job'
 
-console.log(jonas[interessadoEm])    // > professor
+console.log(jonas[interessadoEm])    // > teacher
 ```
 ## Adicionar propriedades em um Objeto
 
@@ -283,26 +295,26 @@ Faz da seguinte forma.
 
 ```javascript
 // NOTAÇÃO POR COLCHETES
-const jonasObjeto = {
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: ['Michael', 'Peter', 'Steven']
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
 }
 
-jonasObjeto.local = 'Portugal'
-jonasObjeto.curso = 'JavaScript'
+jonasObject.localization = 'Portugal'
+jonasObject.course = 'JavaScript'
 
-console.log(jonasObjeto)
+console.log(jonasObject)
 // Mostra todo o objeto:
 /*
-    nome: 'Jonas',
-    sobrenome: 'Schmedtmann',
-    idade: 2037 - 1991,
-    profissao: 'professor',
-    amigos: (3) ['Michael', 'Peter', 'Steven']
-    local: 'Portugal',
-    curso: 'JavaScript'
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: (3) ['Michael', 'Peter', 'Steven']
+    localization: 'Portugal',
+    course: 'JavaScript'
 */
 ```
