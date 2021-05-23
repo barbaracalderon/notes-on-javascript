@@ -284,10 +284,10 @@ const jonasObject = {
     friends: ['Michael', 'Peter', 'Steven']
 }
 
-const interessadoEm = prompt('O que você quer saber sobre o Jonas: Escolha entre firstName, lastName, age, job, friends');
-// Vamos imaginar que o usuário escolheu 'job': interessadoEm = 'job'
+const interestedIn = prompt('O que você quer saber sobre o Jonas: Escolha entre firstName, lastName, age, job, friends');
+// Vamos imaginar que o usuário escolheu 'job': interestedIn = 'job'
 
-console.log(jonas[interessadoEm])    // > teacher
+console.log(jonas[interestedIn])    // > teacher
 ```
 ## Adicionar propriedades em um Objeto
 
