@@ -15,8 +15,9 @@
 03_OPERATORS.md | Math operators, assignment operators, comparison operators, logic operators, ternary operators
 04_CONVERSION_COERCION.md | Template string; string to number; number to string; type coercion; falsy values; truthy values
 05_SWITCH.md | A switch structure
-06_FUNCTIONS.md | Activate the ```stric mode``` in JS; Function Declaration; Function Expression; Arrow Function; Function inside a Function
-07_ARRAYS.md | Creating an Array;
+06_FUNCTIONS.md | Activate the ```stric mode``` in JS; function declaration; function expression; Arrow Function; function inside function
+07_ARRAYS.md | Creating an array; array methods
+08_OBJECTS.md | What are Objects in JS; value/pair; dot notation (```.```) and bracket notation (```[]```); to add properties to an object; object methods; introducing ```this```
 To be continued... | ...
 
  ---
@@ -28,7 +29,6 @@ To be continued... | ...
 
  *Sob construção.*
 
-
 **TABELA DE CONTEÚDOS DO REPOSITÓRIO**
 
 ARQUIVOS | CONTEÚDOS
@@ -39,5 +39,6 @@ ARQUIVOS | CONTEÚDOS
 04_CONVERSION_COERCION.md | Template string; string para número; número para string; tipagem forçada; valores falsy e truthy
 05_SWITCH.md | Estrutura de um switch
 06_FUNCTIONS.md | Ativar ```stric mode``` em JS; funções declarativas; funções expressivas; arrow functions; Função chamando Função
-07_ARRAYS.md | Criando Arrays;
+07_ARRAYS.md | Criando Arrays; Métodos do Array
+08_OBJECTS.md | O que são Objetos em JS; par/valor; notação por ponto (```.```) e notação por colchete (```[]```); adicionar propriedades em um objeto; métodos do objeto; apresentando o ```this```;
 Continua... | ...
