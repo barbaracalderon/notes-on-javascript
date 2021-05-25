@@ -139,7 +139,41 @@ for (let exercise = 1; exercise < 4; exercise++) {          // Loop #01
 }
 ```
 
+## ```While``` Loop - (condition)
 
+A while loop does not require a counter. It requires only a condition. 
+
+You should use a while loop whenever you don't know how many times to execute an specific task. Therefore, if you only depend on condition (and not condition and a counter), there are more situations to use a while loop. 
+
+*PS: feel free to use a counter for a specific problem. But the structure of the while does not depend on it. It depends only on the condition.*
+
+But just for starters, let's use a counter and get it out of the way already. Let's solve a specific problem with a counter.
+
+The same one we were dealing with before.
+
+```javascript
+// While loops (with a counter)
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE: Lifting weights repetition ${rep}`);
+    rep++;
+}
+```
+Now let's solve another problem, where counter is not needed to solve it.
+
+It works with a dice. We don't know how many times to iterate the loop yet.
+
+```javascript
+// While loops (condition)
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop is about to end...');
+}
+```
 ---
 # PT: Loops
 
@@ -280,5 +314,42 @@ for (let exercise = 1; exercise < 4; exercise++) {          // Loop #01
     for (let rep = 1; rep < 6; rep++) {                     // Loop #02
         console.log(`Exercício ${exercise}: Levantamento de peso ${rep}`);
     }
+}
+```
+
+## Laço ```While``` - (condição)
+
+Um laço while não requer um contador. Ele requer apenas uma condição.
+
+Você deve usar um laço while sempre que não souber quantas vezes executar uma tarefa específica. Assim, você depende apenas da condição (e não da condição e mais um contador). Existem mais situações para usar um laço while do que um laço for. 
+
+*PS: Fica a vontade pra usar um contador pra resolver um problema específico. Mas a estrutura do while não depende dele. Depende apenas da condição.*
+
+Mas, só pra começar, vamos usar um contador e mostrar logo como seria pra resolver um problema específico. Vamos resolver um problema que estávamos lidando no laço for. Mesmo código mas agora escrito com um laço while.
+
+```javascript
+// Laço While (com contador)
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE: Repetição ${rep} de levantar peso`);
+    rep++;
+}
+```
+
+Agora vamos resolver outro problema, onde o contador não é necessário para resolvê-lo. Nesse problema, usamos um dado. Não sabemos quantas vezes iterar no laço while para resolver a questão. 
+
+Se tirarmos 6 no dado, então saímos do laço.
+
+Não tem como saber quantas vezes não iremos tirar o 6.
+
+```javascript
+// Laço While (com condição)
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`Você tirou um ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('O laço vai terminar...');
 }
 ```
