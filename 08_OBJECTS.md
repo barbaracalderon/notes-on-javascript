@@ -153,7 +153,83 @@ firstName: 'Jonas',
     course: 'JavaScript'
 */
 ```
----
+
+## Object Methods
+
+Methods are object functions. 
+
+Remember that **functions are values** in JS, so this means that functions can be written in value/pairs (and indeed, inside objects, they are!). So, methods are properties, it just happens that the value is a function.
+
+```property: value;```
+
+Read line above again. There is logic in there.
+
+Here's an object method called ```calcAge```.
+
+```javascript
+// Example
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function (birthYear) {             // calcAge method
+        return 2037 - birthYear;
+    }
+}
+
+console.log(jonas.calcAge(1991));               // > 46
+console.log(jonas['calcAge'](1991));            // > 46
+```
+
+But there's **another way to write the above** using the KISS principle of "Keep It Simple, Stupid": introducing ```this```.
+
+```javascript
+// Using THIS: it refers to the context in which it was created
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function () {
+        console.log(this)                       // test this!
+        return 2037 - this.birthYear;           // this -> refers to jonasObject
+    }
+}
+// THIS was created inside jonasObject (context) so it refers to it
+console.log(jonas.calcAge());                  // > 46
+```
+Guess what?
+
+There is **even a better solution to the code, considering best practices**. 
+
+Check it out.
+
+```javascript
+// Using THIS: it refers to the context in which it was created
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;           // Best practice
+        return this.age;  // It will create this.age property for jonasObject
+    } 
+}
+
+console.log(jonas.age);         // > 46
+```
+
+
+
+
 ---
 
 # PT: Objetos
@@ -317,4 +393,77 @@ console.log(jonasObject)
     localization: 'Portugal',
     course: 'JavaScript'
 */
+```
+
+## Métodos do Objeto
+
+Métodos são funções de um objeto.
+
+Lembre-se que **funções são valores** em JS, então isso significa que as funções podem ser escritas no formato par/valor (e na verdade, dentro dos objetos, elas são escritas assim). Então os métodos são propriedades, só que o seu valor é uma função.
+
+```propriedade: valor;```
+
+Leia o parágrafo de cima de novo. Tem lógica ali.
+
+Aqui embaixo veja um método de objeto chamado ```calcAge```.
+
+```javascript
+// Exemplo
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function (birthYear) {             // método calcAge
+        return 2037 - birthYear;
+    }
+}
+
+console.log(jonas.calcAge(1991));               // > 46
+console.log(jonas['calcAge'](1991));            // > 46
+```
+Mas tem **outro jeito de escrever o código de cima** usando o princípio KISS de "Keep It Simple, Stupid" ou *Mantenha Tudo Simples, Bobão*: apresentando o ```this```.
+
+```javascript
+// Usando o THIS: ele se refere ao contexto em que foi criado
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function () {
+        console.log(this)                       // teste isso!
+        return 2037 - this.birthYear;           // this -> se refere ao jonasObject
+    }
+}
+// THIS foi criado dentro do jonasObject (contexto) então se refere a ele
+console.log(jonas.calcAge());                  // > 46
+```
+
+E adivinha?
+
+Tem uma **solução ainda melhor, considerando as melhores práticas**. 
+
+Olha abaixo. 
+
+```javascript
+// Usando o THIS: ele se refere ao contexto em que foi criado
+const jonasObject = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;           // Best practice
+        return this.age;  // Vai criar uma propriedade this.age para o jonasObject
+    } 
+}
+
+console.log(jonas.age);         // > 46
 ```
