@@ -100,6 +100,46 @@ for (let i = 0; i < jonasArray.length; i++) {
     console.log(jonasArray[i], typeof jonasArray[i]);
 }
 ```
+
+### Looping Backwards
+
+```javascript
+const jonasArray = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991, 
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+]
+
+for (let i = jonasArray.length - 1; i > = 0; i--) {
+    console.log(i, jonasArray[i]);
+}
+
+/*
+> 5 true
+> 4 ["Michael", "Peter", "Steven"]
+> 3 "teacher"
+> 2 46
+> 1 "Schmedtmann"
+> 0 "Jonas"
+*/
+```
+
+### Loop in Loops
+
+```javascript
+for (let exercise = 1; exercise < 4; exercise++) {          // Loop #01
+    console.log(`--- Starting Exercise ${exercise} ---`);
+
+    for (let rep = 1; rep < 6; rep++) {                     // Loop #02
+        console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+    }
+}
+```
+
+
 ---
 # PT: Loops
 
@@ -202,5 +242,43 @@ for (let i = 0; i < jonasArray.length; i++) {
 for (let i = 0; i < jonasArray.length; i++) {
     if (typeof jonasArray[i] === 'number') break;  // break keyword
     console.log(jonasArray[i], typeof jonasArray[i]);
+}
+```
+
+### Fazendo um laço ao contrário (de trás pra frente)
+
+```javascript
+const jonasArray = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991, 
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+]
+
+for (let i = jonasArray.length - 1; i > = 0; i--) {
+    console.log(i, jonasArray[i]);
+}
+
+/*
+> 5 true
+> 4 ["Michael", "Peter", "Steven"]
+> 3 "teacher"
+> 2 46
+> 1 "Schmedtmann"
+> 0 "Jonas"
+*/
+```
+
+### Laço dentro de Laço
+
+```javascript
+for (let exercise = 1; exercise < 4; exercise++) {          // Loop #01
+    console.log(`--- Começo do Exercício ${exercise} ---`);
+
+    for (let rep = 1; rep < 6; rep++) {                     // Loop #02
+        console.log(`Exercício ${exercise}: Levantamento de peso ${rep}`);
+    }
 }
 ```
