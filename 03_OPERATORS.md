@@ -48,8 +48,8 @@ Operators | About
 Operators | About
 :-------- | :-----
 ```!``` | Denial
-```<``` | ```and```
-```>=``` | ```or```
+```&&``` | ```and```
+```\|\|``` | ```or```
 
 ## Ternary operators
 
@@ -130,8 +130,8 @@ Operadores | Sobre
 Operadores | Sobre
 :-------- | :-----
 ```!``` | Negação
-```<``` | ```e```
-```>=``` | ```ou```
+```&&``` | ```e```
+```\|\|``` | ```ou```
 
 ## Operadores ternários
 
