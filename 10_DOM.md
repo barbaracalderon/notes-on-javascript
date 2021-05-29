@@ -23,6 +23,8 @@ Few things to remember.
 
 ## addEventListener
 
+*PS: My [guess-my-number-game](https://github.com/barbaracalderon/guess-my-number-game) project used these concepts.*
+
 Our code will react to something that happens in the application. But how will it know when something happens? By *listening to an event* through the ```addEventListener``` method. 
 
 An ```event``` is something that happens in the page, like a mouse click, a mouse hover, a key press, and more. 
@@ -157,8 +159,9 @@ Coisinhas pra lembrar.
 
 ## addEventListener
 
-Nosso código vai reagir a alguma coisa que acontece na aplicação. Mas como vai saber quando algo acontece? *Escutando (listening) um evento* por meio do método DOM ```addEventListener``
+*PS: Meu projeto [guess-my-number-game](https://github.com/barbaracalderon/guess-my-number-game) usou esses conceitos aqui.*
 
+Nosso código vai reagir a alguma coisa que acontece na aplicação. Mas como vai saber quando algo acontece? *Escutando (listening) um evento* por meio do método DOM ```addEventListener``
 
 Um ```evento``` é algo que acontece na página, como um clique do mouse, um passeio do ponteiro sobre algo (hover), apertar uma tecla, e mais. 
 
