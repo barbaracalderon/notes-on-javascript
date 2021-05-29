@@ -21,6 +21,110 @@ Few things to remember.
 1. The DOM methods and properties for DOM manipulation **are not a part** of JS.
 2. The DOM methods and properties for DOM manipulation **are a part of the Web APIs** (*Application Programming Interface). The Web APIs are like automatic libraries available for use and it's all done behind the curtains, we don't need to import anything. These Web APIs can interact with JS. This is what **truly** happens. So, your browser is a Web API made for visual navigation of the web. Other Web APIs include timers and fetch.
 
+## addEventListener
+
+Our code will react to something that happens in the application. But how will it know when something happens? By *listening to an event* through the ```addEventListener``` method. 
+
+An ```event``` is something that happens in the page, like a mouse click, a mouse hover, a key press, and more. 
+
+With the Event Listener, the code will be waiting for the event to happen, watchful and "listening" to whatever action happens (metaphor intended). When the expected event happens, our code will react to it. 
+
+How to do this?
+
+## Handling Click Events
+
+How to make it work? Two simple steps.
+
+1. Locate on which HTML you want to place your EventListener on
+2. Choose a reaction (usually a function) to this event happening
+
+### addEventListener - on which HTML element
+First, we should be able to locate **where** to place an EventListener. On which HTML element should we place our EventListener?
+
+Let's use a buttom tag as an example.
+
+Imagine this buttom tag has a class called "check". For the EventListener, that class is how it located this specific HTML element: ```(".check")```. 
+
+### Events - what kind? A click
+Now, what should it listen to? A *click*. 
+
+That's the event in our case. But there's a whole list on types of events that could take place on DOM. Be sure to check it out: [the MDN Events categories](https://developer.mozilla.org/pt-BR/docs/Web/Events)
+
+### Reaction - usually a function
+And what should it do after hearing the click? What is its reaction? 
+
+This is called the Event Handler.  How should it handle the click event?
+
+It should handle through a function. Remember that in JS, **functions are values**. So, the Event Listener has two parameters: what it waits for (Event), what it does (Event Handler). The second parameter is usually a function.
+
+```javascript
+// EventListener(two, parameters)
+// .addEventListener('event', function())
+
+document.querySelector('.check').addEventListener('click', function () {
+    console.log(document.querySelector('.guess').value)
+}
+
+// PS: Value is an attribute. We can access it through ".value"
+```
+
+Our function is simple: it prints the value to the console.
+
+Let's convert the input (string) to a number.
+
+```javascript
+
+// Remember, whenever we get the user input, 
+// it comes to us as a string. So if we're dealing with numbers,
+// we must convert it to number with the Number() method.
+
+document.querySelector('.check').addEventListener('click', function() {
+    console.log(document.querySelector('.guess').value) // > '5'
+})
+
+// String -> Number:
+document.querySelector('.check').addEventListener('click', function () {
+    const guess = Number(document.querySelector('.guess').value);
+    console.log(guess, typeof guess);       // > 5 "number"
+})
+
+// PS: The TEXT CONTENT on our HTML elements are aso attributes. 
+// We can access it through ".textContent"
+// (just like we did with ".value")
+```
+
+### DOM not always reliable
+Sometimes you will not be able to rely on the DOM, so it's safe to place some variables inside your code instead of catching it through the DOM.
+
+### State Variables
+Some variables can be called state variables because they are a part of the DOM state, which basically is **all the data that is relevant to the application**.
+
+## Manipulating CSS Styles
+We can change CSS through the DOM.
+
+For example, we can change the entire page background color. 
+
+In order to do this, you gotta select the body of the HTML document to change the background. Then, the style - it's actually a property in DOM. Then, you can access the CSS attributes themselves. 
+
+Like this.
+
+```javascript
+document.querySelector('body').style.backgroundColor = '#60b347';
+
+// ".style" is a DOM property
+```
+
+You can also select other HTML elements to change the CSS property.
+
+```javascript
+document.querySelector('.number').style.width = '30rem';
+
+// Here, we selected the ".number" HTML element and accessed
+// the style DOM property to "grab" the CSS "width" property.
+```
+*IMPORTANT: Remember to use the DOM style property to specify the CSS properties to change. The CSS property is called using camelCase and it's always a string.*
+
+
 ---
 
 # PT: Document Object Model (DOM)
@@ -49,3 +153,4 @@ Coisinhas pra lembrar.
 
 1. Os métodos e propriedades do DOM para sua manipulação **não são parte** do JS.
 2. Os métodos e propriedades do dom para sua manipulação **são uma parte das Web APIs** (*Application Programming Interface*, ou Aplicação de Interface de Programação). As Web APIs são como bibliotecas automáticas disponíveis para uso e são usadas, neste caso, por baixo dos panos - não tem necessidade de importar nada. Essas Web APIs podem interagir com JS. É isso que de verdade acontece. Então, o seu navegador é um Web API feito para navegação visual de conteúdos da web. Outras Web APIs incluem timers e fetch.
+
