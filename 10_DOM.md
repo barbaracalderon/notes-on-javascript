@@ -1,6 +1,6 @@
 # EN: Document Object Model (DOM)
 
-*PS: My [guess-my-number-game](https://github.com/barbaracalderon/guess-my-number-game) project used these concepts.*
+Very famous. Fundamental JavaScript Concept.
 
 ## Introduction 
 
@@ -23,7 +23,15 @@ Few things to remember.
 1. The DOM methods and properties for DOM manipulation **are not a part** of JS.
 2. The DOM methods and properties for DOM manipulation **are a part of the Web APIs** (*Application Programming Interface). The Web APIs are like automatic libraries available for use and it's all done behind the curtains, we don't need to import anything. These Web APIs can interact with JS. This is what **truly** happens. So, your browser is a Web API made for visual navigation of the web. Other Web APIs include timers and fetch.
 
-## addEventListener
+## Guess-My-Number-Game Project
+
+*PS: My [guess-my-number-game](https://github.com/barbaracalderon/guess-my-number-game) project used these concepts.*
+
+These are the notes from the above repository. 
+
+Check out the repository to see the whole code in all its integrity.
+
+### addEventListener
 
 Our code will react to something that happens in the application. But how will it know when something happens? By *listening to an event* through the ```addEventListener``` method. 
 
@@ -33,7 +41,7 @@ With the Event Listener, the code will be waiting for the event to happen, watch
 
 How to do this?
 
-## Handling Click Events
+### Handling Click Events
 
 How to make it work? Two simple steps.
 
@@ -52,7 +60,8 @@ Now, what should it listen to? A *click*.
 
 That's the event in our case. But there's a whole list on types of events that could take place on DOM. Be sure to check it out: [the MDN Events categories](https://developer.mozilla.org/pt-BR/docs/Web/Events)
 
-### Reaction - usually a function
+### Reaction - a function
+
 And what should it do after hearing the click? What is its reaction? 
 
 This is called the Event Handler.  How should it handle the click event?
@@ -69,7 +78,6 @@ document.querySelector('.check').addEventListener('click', function () {
 
 // PS: Value is an attribute. We can access it through ".value"
 ```
-
 Our function is simple: it prints the value to the console.
 
 Let's convert the input (string) to a number.
@@ -128,18 +136,17 @@ document.querySelector('.number').style.width = '30rem';
 
 ## Modal Project
 
+*PS: These notes are a reference to the Modal Project inside this repository. Check out the [modal-project-example](https://github.com/barbaracalderon/notes-on-javascript/tree/main/project-modal-example) folder here.*
+
 First, we gotta select every HTML element that we're doing to interact with. Then, we store them inside variables to make things easier. 
 
 Check the HTML document and see which classes are the ones through which we will select our HTML element.
 
 The hidden class will be the main class we'll deal with: it's that big box we're dealing with.
 
-The classes are:
+The classes are: ```modal, overlay, hidden, show modal```.
 
-modal
-overylay
-hideen
-show modal
+*The overlay class is the blurred part of the page.*
 
 Let's grab them and store them inside variables.
 
@@ -176,7 +183,7 @@ for (let i = 0; i < btnsModalOpen.length; i++) {
 // > modal button 3
 ```
 
-## Manipulate Classes with JS
+### Manipulate Classes with JS
 
 Here is what we're gonna do: there are three buttons in the page. We gotta click each of these buttons and it will pop up a window. We can click the X to exit the window, click outside the window box or press ESC.
 
@@ -188,7 +195,7 @@ The box that should pop up already exists but it is **hidden** in CSS, using the
 
 To make the window pop up, we're going to click on either Open Modal Button and the reaction will be to remove the "hidden" class from the classList property of the DOM.
 
-It seems the DOM creates a list of all classes available to manipulate. When we remove the "hidden" class, it means it becomes visible because that "hidden" class (and also CSS state) is no longer reachable.
+*PS: It seems the DOM creates a list of all classes available to manipulate. When we remove the "hidden" class, it means it becomes visible because that "hidden" class (and also CSS state) is no longer reachable.*
 
 Now the window appears.
 
@@ -248,7 +255,7 @@ overlay.addEventListener('click', closeModal);
 
 The lesson to learn is... **whenever your code repeats itself, you the DRY principle**. Especially if the same reaction is used in different occasions - like the open modal or to close it. **Store that function inside a variable and use the variable**.
 
-## Global Event - press 'ESC' key
+### Global Event - press 'ESC' key
 
 Key press events are called global events because it does not happen in an specific HTML element.
 
@@ -258,9 +265,11 @@ That are 3 events for keyboards.
 
 They are described below.
 
-1. **keydown**: it fires the reaction as soon as we press the key
-2. **keypress**: it fires the reaction continuously as long as your finger is pressing the key
-3. **keyup**: only happens when you lift off your finger from the key
+Event | What it does
+------ | ---------
+**keydown** | it fires the reaction as soon as we press the key
+**keypress** | it fires the reaction continuously as long as your finger is pressing the key
+**keyup** | only happens when you lift off your finger from the key
 
 We handle them the following way.
 
@@ -282,25 +291,30 @@ document.addEventListener('keydown', function (e) {
     }
 });
 ```
+Remember 'ESC' is for "Escape".
 
 Which can be better written as below (whole code).
 
 ```javascript
-// Open and Close Modals, according to click on three boxes and ESC key
+// Selecting the elements
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnsOpenModal = document.querySelectorAll('.show-modal');
 
+// Open the modal box
 const openModal = function () {
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
 }
+
+// Close the modal box
 const closeModal = function () {
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
 }
 
+// Select all the Modal buttons
 for (let i = 0; i < btnsOpenModal.length; i++)
     btnsOpenModal[i].addEventListener('click', openModal);
 btnCloseModal.addEventListener('click', closeModal);
@@ -315,16 +329,19 @@ document.addEventListener('keydown', function (e) {
 
 ```
 
-## The querySelector
+### The querySelector and querySelectorAll
 
 It's how you grab an HTML element. 
 
-Type | Coding
+Type | Code
 ---- | -------
 Classes | ```document.querySelector('.class')```
 Id | ```document.querySelector('#id')```
 
-## The Toggle Method
+Remember to select more of the same element through ```document.querySelectorAll('#id')```
+
+
+### The Toggle Method
 
 ```element.classList.toggle("example")```
 
@@ -337,13 +354,13 @@ Toggle between adding and removing a class name from an element with JS.
 
 Additionally, you can manually add or remove a class from the classList with the methods: ```element.classList.add(".example")``` or ```element.classList.remove(".example")```
 
-## Init Function
+### Init Function
 
 It might be a good idea to create your own init function. 
 
 This could work well if your project has starting conditions that can be reset according to a user choice.
 
-## Organization
+### Organization
 
 You are starting out now. It's good practice to organize your code so you will not get lost in it. Nobody likes spaghetti code.
 
@@ -357,21 +374,11 @@ Here are some ideas. Start out with:
 6. Comments for future reference
 7. Others
 
-
-
-
-
-
-
-
-
-
-
 ---
 
 # PT: Document Object Model (DOM)
 
-*PS: Meu projeto [guess-my-number-game](https://github.com/barbaracalderon/guess-my-number-game) usou esses conceitos aqui.*
+Muito famoso. Conceito em JavaScript fundamental.
 
 A tradução mais perto do sentido que encontrei foi "Modelo de Objeto Documento".
 
@@ -398,8 +405,15 @@ Coisinhas pra lembrar.
 1. Os métodos e propriedades do DOM para sua manipulação **não são parte** do JS.
 2. Os métodos e propriedades do dom para sua manipulação **são uma parte das Web APIs** (*Application Programming Interface*, ou Aplicação de Interface de Programação). As Web APIs são como bibliotecas automáticas disponíveis para uso e são usadas, neste caso, por baixo dos panos - não tem necessidade de importar nada. Essas Web APIs podem interagir com JS. É isso que de verdade acontece. Então, o seu navegador é um Web API feito para navegação visual de conteúdos da web. Outras Web APIs incluem timers e fetch.
 
+## Guess-My-Number-Game Project
 
-## addEventListener
+*PS: Meu projeto [guess-my-number-game](https://github.com/barbaracalderon/guess-my-number-game) usou os conceitos descritos aqui.*
+
+Essas anotações são referentes ao repositório acima. 
+
+Veja esse repositório para estudar todo o código de modo integral.
+
+### addEventListener
 
 Nosso código vai reagir a alguma coisa que acontece na aplicação. Mas como vai saber quando algo acontece? *Escutando (listening) um evento* por meio do método DOM ```addEventListener``
 
@@ -409,7 +423,7 @@ Com o Event Listener ("Escutador de Eventos"), o código vai esperar o evento ac
 
 Como fazer isso?
 
-## Lidando com os Eventos de Clique
+### Lidando com os Eventos de Clique
 
 Como fazer funcionar? Dois passos simples.
 
@@ -475,15 +489,12 @@ document.querySelector('.check').addEventListener('click', function () {
 ```
 
 ### Nem sempre dá pra depender do DOM
-
 Algumas vezes você não vai conseguir pegar as informações no DOM, então é tranquilo colocar algumas variáveis dentro do seu código em vez de "pegá-las" do DOM. 
 
 ### Variáveis de Estado
-
 Algumas variáveis podem ser chamadas de "state variables" (variáveis de estado) porque elas são uma parte do estado do DOM, que basicamente **são todos os dados que são relevantes para a aplicação**. 
 
 ## Manipulando CSS Styles
-
 Dá pra mudar o CSS pelo DOM. 
 
 Por exemplo, dá pra mudar toda a cor do background da página. 
@@ -512,6 +523,7 @@ document.querySelector('.number').style.width = '30rem';
 
 ## Projeto Modal 
 
+*PS: As anotações dessa seção são referentes ao Modal Project que está nesse repositório. Veja na pasta [modal-project-example](https://github.com/barbaracalderon/notes-on-javascript/tree/main/project-modal-example) aqui.*
 
 Primeiro, temos que selecionar cada elemento HTML com o qual vamos interagir. Depois, guardar esses valores em variáveis para tornar tudo mais simples. 
 
@@ -694,7 +706,6 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
-
 document.addEventListener('keydown', function (e) {
     console.log(e);
     if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
@@ -704,7 +715,7 @@ document.addEventListener('keydown', function (e) {
 
 ```
 
-## O querySelector e o querySelectorAll
+### O querySelector e o querySelectorAll
 
 É como você seleciona um elemento HTML.
 
@@ -715,7 +726,7 @@ Id | ```document.querySelector('#id')```
 
 Lembrando que pra selecionar mais de um mesmo elemento é por meio do ```querySelectorAll```
 
-## Método Toggle
+### Método Toggle
 
 ```element.classList.toggle("example")```
 
@@ -728,7 +739,7 @@ Mude entre adicionar e remover um nome de class de um elemento com o JS.
 
 Além disso, você pode manualmente adicionar ou remover o nome de uma classe da classList por meio dos métodos de adicionar ("add") e remover ("remove): ```element.classList.add(".example")``` ou ```element.classList.remove(".example")```
 
-## Função Init
+### Função Init
 
 Pode ser uma boa ideia criar sua própria função init.
 
@@ -736,7 +747,7 @@ Init vem de "initialization" que significa "inicialização".
 
 Isso pode funcionar bem em um projeto que tem condições de início que podem ser "resetados" pelo usuário dependendo de sua escolha. 
 
-## Organização
+### Organização
 
 Você tá começando agora. É uma boa prática organizar o seu código para não se perder nele mesmo. Ninguém gosta de código "spaghetti". 
 
