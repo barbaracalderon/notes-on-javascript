@@ -136,13 +136,21 @@ document.querySelector('.number').style.width = '30rem';
 
 ## Modal Project
 
+### Introduction 
+
 *PS: These notes are a reference to the Modal Project inside this repository. Check out the [modal-project-example](https://github.com/barbaracalderon/notes-on-javascript/tree/main/project-modal-example) folder here.*
+
+Go to the repository mentioned above and click on the index.html file. It will show you a page with three buttons. If you click on either button, it displays a large box in the center of the screen with a message. The large box blurs everything not in the box. It also has an X, and if you click on it, it closes. Also, you can close it by hitting the 'ESC' key.
+
+How do we make all these interactions? With JavaScript.
+
+In this section, we describe how. These are the notes about the Modal Project Example, with key points to JavaScript that are **worth reminding yourself once in a while**.
+
+### Check the Index.html file
 
 First, we gotta select every HTML element that we're doing to interact with. Then, we store them inside variables to make things easier. 
 
-Check the HTML document and see which classes are the ones through which we will select our HTML element.
-
-The hidden class will be the main class we'll deal with: it's that big box we're dealing with.
+Check the HTML document and see which classes are the ones through which we will select our HTML elements. If you take a closer look, you will notice that the hidden class is the main class we'll deal with: the hidden class is a reference to the big box we're going to deal with. 
 
 The classes are: ```modal, overlay, hidden, show modal```.
 
@@ -158,17 +166,17 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 ```
 
-And now we got three buttons from the same class "show-modal". If we try to do the same thing as before.
+And now we got three buttons from the same class "show-modal". If we try to do the same thing as before with the show-modal class...
 
 ```javascript
 // It will only grab the first box:
 const btnsOpenModal = document.querySelector('.show-modal');
 ```
-It won't work because it will only select the first one. Not the three modal boxes. 
+... it won't work because it only selects the first one. Not the three modal boxes. 
 
 So how do we grab all three modal boxes? 
 
-We use the querySelectorAll instead of querySelector.
+We use the ```querySelectorAll``` instead of ```querySelector```.
 
 All our buttons are now inside a list, so we can iterate the list to manipulate each item.
 
@@ -185,21 +193,23 @@ for (let i = 0; i < btnsModalOpen.length; i++) {
 
 ### Manipulate Classes with JS
 
-Here is what we're gonna do: there are three buttons in the page. We gotta click each of these buttons and it will pop up a window. We can click the X to exit the window, click outside the window box or press ESC.
+Remember what we have to do: we gotta click each of these buttons in order to make the large box show up on the screen.
 
-This is what we're going to do. How do we do it?
+How do we do it?
 
 First, let's manipulate the previous Open Modal Buttons.
 
-The box that should pop up already exists but it is **hidden** in CSS, using the display none property/value. It's already there but we cannot see it. 
+The box that should pop up already exists but it is **hidden** in CSS, because its display property value is set to none. It's already there but we cannot see it. 
 
-To make the window pop up, we're going to click on either Open Modal Button and the reaction will be to remove the "hidden" class from the classList property of the DOM.
+To make the window pop up, we're going to click on either Open Modal Button and the reaction must be to remove the "hidden" class from the classList property of the DOM.
 
 *PS: It seems the DOM creates a list of all classes available to manipulate. When we remove the "hidden" class, it means it becomes visible because that "hidden" class (and also CSS state) is no longer reachable.*
 
 Now the window appears.
 
-How do we do to close it? We **add** the "hidden" class back to the DOM classList.
+How do we do to close it?
+
+We **add** the "hidden" class back to the DOM classList.
 
 That's what we're going to do.
 
@@ -253,11 +263,11 @@ btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 ```
 
-The lesson to learn is... **whenever your code repeats itself, you the DRY principle**. Especially if the same reaction is used in different occasions - like the open modal or to close it. **Store that function inside a variable and use the variable**.
+The lesson to learn is... **whenever your code repeats itself, you gotta use the DRY principle**. Especially if the same reaction is used in different occasions - like, to open the modal buttom or to close it. So, **store that function inside a variable (remember functions are values in JS) and use the variable**.
 
 ### Global Event - press 'ESC' key
 
-Key press events are called global events because it does not happen in an specific HTML element.
+Key press events are called global events because it does not happen on an specific HTML element.
 
 So, how to respond to keyboard events? We still need to use Event Listener.
 
@@ -266,7 +276,7 @@ That are 3 events for keyboards.
 They are described below.
 
 Event | What it does
------- | ---------
+:------ | :---------
 **keydown** | it fires the reaction as soon as we press the key
 **keypress** | it fires the reaction continuously as long as your finger is pressing the key
 **keyup** | only happens when you lift off your finger from the key
@@ -279,7 +289,7 @@ document.addEventListener('keydown', function () {
     console.log('A key was pressed.')
 })
 ```
-But we don't want this. We want to fire a reaction, which is to close Modal, only when we press the ESC key.
+But we don't want this. We want to fire a reaction only when we press the ESC key. The reaction is to close it.
 
 ```javascript
 document.addEventListener('keydown', function (e) {
@@ -334,7 +344,7 @@ document.addEventListener('keydown', function (e) {
 It's how you grab an HTML element. 
 
 Type | Code
----- | -------
+:---- | :-------
 Classes | ```document.querySelector('.class')```
 Id | ```document.querySelector('#id')```
 
@@ -343,9 +353,9 @@ Remember to select more of the same element through ```document.querySelectorAll
 
 ### The Toggle Method
 
-```element.classList.toggle("example")```
-
 This might come in handy!
+
+```element.classList.toggle("example")```
 
 Toggle between adding and removing a class name from an element with JS.
 
@@ -523,13 +533,21 @@ document.querySelector('.number').style.width = '30rem';
 
 ## Projeto Modal 
 
+### Introdução
+
 *PS: As anotações dessa seção são referentes ao Modal Project que está nesse repositório. Veja na pasta [modal-project-example](https://github.com/barbaracalderon/notes-on-javascript/tree/main/project-modal-example) aqui.*
+
+Vá para o repositório mencionado acima e clique no arquivo index.html. Ele vai te mostrar uma página com três botões. Se você clicar em qualquer um destes botões, uma caixa grande com conteúdo vai aparecer no meio da página. Essa caixa grande deixa tudo "embaçado" que esteja fora dela. Nessa caixa, também existe um X que, caso você clique em cima, faz a caixa fechar. Além disso, você pode fechar a caixa apertando a tecla 'ESC'.
+
+Como a gente faz essas interações? Com JavaScript.
+
+Nesta seção, a gente descreve como. Essas são as minhas anotações sobre o Modal Project Example, com pontos bem importantes sobre JavaScript que considero que **vale a pena se lembrar de vez em quando, voltar aqui**.
+
+### Abra o arquivo index.html
 
 Primeiro, temos que selecionar cada elemento HTML com o qual vamos interagir. Depois, guardar esses valores em variáveis para tornar tudo mais simples. 
 
-Observe o HTML document e veja quais classes são aquelas que vamos selecionar como elementos HTML para interagir.
-
-A classe "hidden" vai ser a classe principal com a qual vamos lidar: é essa caixa grande que vamos lidar no navegador. 
+Observe o HTML document e veja quais classes são aquelas que vamos selecionar como elementos HTML para interagir. Se você olhar bem, vai notar que a classe "hidden" é a classe principal com a qual vamos lidar: é essa caixa grande que vamos lidar no navegador. 
 
 As classes são: ```modal, overlay, hidden, show modal```.
 
@@ -545,14 +563,14 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 ```
 
-E agora nós temos três botões com a mesma classe "show-modal". Se a gente tentar fazer a mesma coisa que a caixa de código anterior mostra... 
+E agora nós temos três botões com a mesma classe "show-modal". Se a gente tentar fazer a mesma coisa com a classe "show-modal", a mesma coisa que a caixa de código anterior mostra... 
 
 ```javascript
 // Só vai selecionar a primeira caixa
 const btnsOpenModal = document.querySelector('.show-modal');
 ```
 
-Não vai funcionar porque vai apenas selecionar a primeira caixa e não as três caixas modal.
+...não vai funcionar porque vai apenas selecionar a primeira caixa, e não as três caixas modal.
 
 Então como selecionar todas as três caixas?
 
@@ -571,7 +589,7 @@ for (let i = 0; i < btnsModalOpen.length; i++) {
 
 ### Manipular Classes com JS
 
-Eis o que vamos fazer: existem três botões na página. Nós vamos clicar em cada um desses botões e vai aparecer uma janela. Para fechar essa pequena janela (chamaremos de caixa), nós podemos clicar no X, clicar em algum local fora dessa caixa ou ainda apertar o ESC do teclado.
+Lembre-se do que temos que fazer: temos que clicar em qualquer um desses botões para fazer com que a caixa grande apareça na tela. Para fechar essa pequena janela (chamaremos de caixa), nós podemos clicar no X, clicar em algum local fora dessa caixa ou ainda apertar o ESC do teclado.
 
 Perceba que são três formas diferentes de fechar a caixa.
 
@@ -585,7 +603,9 @@ Para fazer a caixa aparecer, nós vamos clicar em qualquer um dos botões Open M
 
 *PS: Parece que o DOM cria uma lista de todas as classes disponíveis para manipular. Quando a gente remove a classe "hidden", significa que ela se torna visível porque a classe "hidden" (e o estado CSS) não está mais alcançável.*
 
-Agora a caixa aparece. Mas como vamos fechá-la? 
+Agora a caixa aparece. 
+
+Mas como vamos fechá-la? 
 
 A gente adiciona (*add*) a classe "hidden" de volta para a classList do DOM. 
 
@@ -650,7 +670,7 @@ Ainda precisamos usar o Event Listener.
 Existem três eventos para teclados. Eles estão descritos abaixo.
 
 Evento | O que faz
------- | ---------
+:------ | :---------
 **keydown** | ele aciona a reação assim que a gente aperta a tecla
 **keypress** | ele aciona a reação continuamente enquanto o nosso dedo estiver apertando a tecla
 **keyup** | só aciona a reação quando você **levanta** o dedo da tecla
@@ -720,7 +740,7 @@ document.addEventListener('keydown', function (e) {
 É como você seleciona um elemento HTML.
 
 Tipo | Código
----- | ------
+:---- | :------
 Classes | ```document.querySelector('.class')```
 Id | ```document.querySelector('#id')```
 
