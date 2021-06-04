@@ -12,7 +12,10 @@ Our first definition was:
 But here's another one:
 
 ```
-"Javascript is a high-level, prototype-based object-oriented, multi-paradigm, interpreted or just-in-time compiled, dynamic, single-threaded, gargabe-collected programming language with first-class functions and a non-blocking event loop concurrecy model."
+"Javascript is a high-level, prototype-based object-oriented, multi-paradigm,
+interpreted or just-in-time compiled, dynamic, single-threaded,
+gargabe-collected programming language with first-class functions and a 
+non-blocking event loop concurrecy model."
 - Jonas Schmedtmann.
 ```
 
@@ -87,9 +90,13 @@ By using an event loop, it takes long-running tasks and **executes them in the "
 Should make sense now.
 
 ```
-"Javascript is a high-level, prototype-based object-oriented, multi-paradigm, interpreted or just-in-time compiled, dynamic, single-threaded, gargabe-collected programming language with first-class functions and a non-blocking event loop concurrecy model."
+"Javascript is a high-level, prototype-based object-oriented, multi-paradigm,
+interpreted or just-in-time compiled, dynamic, single-threaded,
+gargabe-collected programming language with first-class functions and a 
+non-blocking event loop concurrecy model."
 - Jonas Schmedtmann.
 ```
+
 ---
 # PT: Visão Geral do JavaScript
 
@@ -108,7 +115,11 @@ Mas aqui vai outra definição:
 ```
 // (Tradução minha em PT, não do autor original)
 
-"Javascript é uma linguagem de programação de alto-nível, orientada a objetos baseada em protótipos, multi-paradigmática, interpretada ou rapidamente compilada, dinâmica, de único-fio e coletora de lixo com funções de primeira-classe e um modelo de simultaneidade com laço de evento não-bloqueador."
+"Javascript é uma linguagem de programação de alto-nível, 
+orientada a objetos baseada em protótipos, multi-paradigmática, 
+interpretada ou rapidamente compilada, dinâmica, de único-fio 
+e coletora de lixo com funções de primeira-classe e um modelo 
+de simultaneidade com laço de evento não-bloqueador."
 - Jonas Schmedtmann.
 ```
 Muita coisa.
@@ -184,6 +195,10 @@ Deve fazer sentido agora.
 ```
 // (Tradução minha em PT, não do autor original)
 
-"Javascript é uma linguagem de programação de alto-nível, orientada a objetos baseada em protótipos, multi-paradigmática, interpretada ou rapidamente compilada, dinâmica, de único-fio e coletora de lixo com funções de primeira-classe e um modelo de simultaneidade com laço de evento não-bloqueador."
+"Javascript é uma linguagem de programação de alto-nível, 
+orientada a objetos baseada em protótipos, multi-paradigmática, 
+interpretada ou rapidamente compilada, dinâmica, de único-fio 
+e coletora de lixo com funções de primeira-classe e um modelo 
+de simultaneidade com laço de evento não-bloqueador."
 - Jonas Schmedtmann.
 ```
