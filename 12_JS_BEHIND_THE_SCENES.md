@@ -73,3 +73,32 @@ The Event Loop is essential for the non-blocking concurrency model. It is a fund
 *PS: The Runtime can also happen outside the browser, for example, in the Node.js. In this case, we say "Runtime in the Node.js". It's a bit differente because Node.js does not have a browser, so it does not have the Web APIs. Instead, we have "C++ bindings & thread pool".*
 
 ## 2. Execution Context and the Call Stack
+
+Let's imagine our code just finished compiling and is now ready to be executed. What happens now?
+
+A **Global Execution Context** (GEC) for top-level code is created.
+
+Exactly **one** GEC is created per program. It is the default context created for code that is not inside any function.
+
+Top-level code is *code outside functions*. In the beginning, only code outside functions are executed and it makes sense: code inside functions are executed upon calling the function. An execution context is an environment in which a piece of JavaScript is executed - it stores all the necessary information for some code to be executed.
+
+After the creation of a GEC, the following step is the **execution of top-level code** inside global Execution Context (EC).
+
+And the final step is **execution of functions and waiting for callbacks**. One Execution Context (EC) is created per function - for **each** function call, a new execution context is created.
+
+### Execution Context (EC) in detail
+
+What is inside an EC?
+
+Items | Examples | In Arrow Functions
+----- | -------- | -------------------
+Variable Environment | let, const and var declarations; functions; arguments objects | NO (to "arguments objects") and YES (to everything else)
+Scope Chain | Basically consists of references to variables located outside of the current function | YES
+"This" Keyword | More coming on this | NO
+
+They are all created during the "creation phase" - right before execution. 
+
+## Call Stack in detail
+
+The Call Stack is the "place" where ECs get stacked on top of each other to **keep track of where we are in the execution**. 
+
