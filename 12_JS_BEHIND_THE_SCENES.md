@@ -160,3 +160,31 @@ Function expressions and Arrow functions | Depends if declared with var or let/c
 The TDZ is the space from when the variable is called until it is actually defined in the code. Why have it? Because it makes easier to avoid and catch errors -> being able to access variables before declaration is a bad practice and should be avoided. It makes const variables actually work.
 
 Why have hoisting? Because it made functions useful before actual declaration. The var hoisting is just a byproduct.
+
+## 5. The "This" Keyword
+
+Remember: EC contains "variable environment", "scope chain" and "this keyword". This section is about "this" keyword, a very special variable in JS.
+
+What is it?
+
+```this``` is a special variable automatically **created for every Execution Context** (EC), which *includes every function*. This special variable takes the value of the "owner" of the function in which ```this``` keyword is used.
+
+The value of "this" keyword **is NOT** static.
+
+It changes.
+
+It depends on **how** the function is called. Its value is **only assigned** when the function **is actually called**. This is very important.
+
+So, how can a function be called then? Because this is important.
+
+There are four ways.
+
+How to call a Function| Meaning | ```this``` keyword
+:-------------------- | :------ | :-------------
+Method | A function is called inside an object, because it's an object value | ```this``` -> points to the Object that is calling the method
+Simple function call | Not attached to any object | ```this``` -> points to ```undefined``` in case of 'strict mode'; or it points to ```window``` (in the browser)
+Arrow functions | Not a way to call functions but important to mention | ```this``` -> points to surrounding function. They don't use the ```this``` keyword themselves, so the ```this``` keyword refers to surrounding function (lexical this)
+Event Listener | The reaction to an event | ```this``` -> points to DOM element that the handler is attached to
+```new, call, apply, bind``` | More coming in next notes | More to come
+
+**Important to note**: ```this``` does not point to the function itself and does not point to its variable environment.
