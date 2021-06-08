@@ -139,3 +139,24 @@ You access the parent-scope related to current-scope but not the child-scope of 
 Important to note: *```let``` and ```const``` are BLOCK-SCOPED while ```var``` is FUNCTION-SCOPED.* 
 
 The Scope Chain has nothing to do with the **order** in which functions are called. The Scope Chain in a certain scope is equal to adding together **all the variable environments** of the all parent-scopes.
+
+## 4. Variable Environment: Hoisting and TDZ
+
+Remember: EC contains "variable environment", "scope chain" and "this keyword". This section is about variable environment - specifically on hoisting and the Temporal Dead Zone (TDZ).
+
+How are variables created in JS?
+
+Through hoisting. 
+
+Hoisting makes some types of variables accessible/usable in the code before they are actually declared. Behind the scenes, the code is scanned for variable declarations, and for each variable a new property is created in the variable environment object.
+
+What | Hoisted? | Initial Value | Scope
+:--- | :------- | :------------ | :-----
+Function declarations | YES | Actual function | Block scope (true for 'strict mode')
+Var variables | YES | undefined | Function scope
+let and const variables | NO - (technically yes but not in practice) | \<unintiallized>, Temporal Dead Zone (TDZ) | Block scope
+Function expressions and Arrow functions | Depends if declared with var or let/const | Depends | Depends
+
+The TDZ is the space from when the variable is called until it is actually defined in the code. Why have it? Because it makes easier to avoid and catch errors -> being able to access variables before declaration is a bad practice and should be avoided. It makes const variables actually work.
+
+Why have hoisting? Because it made functions useful before actual declaration. The var hoisting is just a byproduct.
