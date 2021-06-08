@@ -98,7 +98,8 @@ Scope Chain | Basically consists of references to variables located outside of t
 
 They are all created during the "creation phase" - right before execution. 
 
-## Call Stack in detail
+### Call Stack in detail
 
 The Call Stack is the "place" where ECs get stacked on top of each other to **keep track of where we are in the execution**. 
 
+## 3. Scoping and Scope in JS: concepts
