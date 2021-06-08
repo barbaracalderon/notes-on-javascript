@@ -91,7 +91,7 @@ And the final step is **execution of functions and waiting for callbacks**. One 
 What is inside an EC?
 
 Items | Examples | In Arrow Functions
------ | -------- | -------------------
+:----- | :-------- | :-------------------
 Variable Environment | let, const and var declarations; functions; arguments objects | NO (to "arguments objects") and YES (to everything else)
 Scope Chain | Basically consists of references to variables located outside of the current function | YES
 "This" Keyword | More coming on this | NO
@@ -103,3 +103,39 @@ They are all created during the "creation phase" - right before execution.
 The Call Stack is the "place" where ECs get stacked on top of each other to **keep track of where we are in the execution**. 
 
 ## 3. Scoping and Scope in JS: concepts
+
+Each EC has a variable environment, a scope chain and a "this" keyword.
+
+### Concepts
+
+**Scoping** controls how our programs' variables are organized and accessed. 
+
+**Lexical Scoping** is how scoping is controlled by **placement** of functions and blocks in the code. This is influenced by where we write in our code. 
+
+**Scope** is the space or environment in which a certain variable is declared: there is global scope, function scope and block scope.
+
+**Scope of a variable** is the region of our code where a certain variable can be accessed.
+
+They are all different things.
+
+### Global Scope, Function Scope and Block Scope
+
+Here's a table to remember.
+
+Name | In details | Variables accessibility
+:---- | :-------- | :----------------------
+Global Scope | Top-level code; it resides outside any function or block code | Variables declared here are accessible *everywhere*
+Function Scope | Also called local scope; it resides inside a function | Variables declared here are accessible only inside the function (not outside it)
+Block Scope | Everything inside curly braces (for example, if block, for loop block, while loop block, etc.) | Variables declared here are accessible only inside block (but this only applies to let and const variables). In strict mode, functions are also block scoped
+
+*PS: var variables only care about function scope and not block scope.*
+
+### Scope Chain
+
+The procedure to access a variable is called "variable lookup in scope chain" which, in turn, means that a particular scope has access to variables from all **outer** scopes. The reverse is not true, though. **Pay attention to this**.
+
+You access the parent-scope related to current-scope but not the child-scope of current-scope.
+
+Important to note: *```let``` and ```const``` are BLOCK-SCOPED while ```var``` is FUNCTION-SCOPED.* 
+
+The Scope Chain has nothing to do with the **order** in which functions are called. The Scope Chain in a certain scope is equal to adding together **all the variable environments** of the all parent-scopes.
