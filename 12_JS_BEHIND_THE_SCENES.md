@@ -188,3 +188,22 @@ Event Listener | The reaction to an event | ```this``` -> points to DOM element 
 ```new, call, apply, bind``` | More coming in next notes | More to come
 
 **Important to note**: ```this``` does not point to the function itself and does not point to its variable environment.
+
+You should never use an arrow function as a method. Precisely because of errors on "this" keyword.
+
+## 6. Primitive Types vs. Reference Types (Objects)
+
+This can cause a lot of confusion. It's important to understand how primitive types and reference types are stored in memory because they are radically different.
+
+Remember the Engine? It consists basically of two important structures: the Call Stack and the Heap.
+
+**Primitive types are stored in the Call Stack**. The variable points to an address in memory which, in turn, stores a value. 
+
+When we create another variable and replicates the first value to it, both variables point to the same address in memory. If we change one variable's value, then this variable will now point to another address in memory that holds the new value. The other variable will keep pointing to the previous memory address.
+
+**Reference types (objects) are stored in the Heap**. The object points to an address in memory which, in turn, holds a value. *This value is a reference to a location in the Heap* - that's why we call it "Reference" Types. But see? There's two steps here.
+
+When we create another object by replicating a previous object to this new one, both objects point to the same address in memory which, in turn, points to a specific address in the Heap. If we change anything inside this object, regardless in which pointer (or name object), **the change is done in the Heap**. And it's only ONE object in the Heap, with two pointers to a memory address... which in turn points to this ONE object in the Heap.
+
+That's why if we change an object property, it changes *apparently* in both objects. That's because it's only one object but two pointers to the memory address in the Call Stack. The value in this memory address references to an address in the Heap *to the actual object stored in memory*. The object itself is not replicated, it's the same one, it's only one. The pointer is replicated. See the difference?
+
