@@ -207,3 +207,28 @@ When we create another object by replicating a previous object to this new one, 
 
 That's why if we change an object property, it changes *apparently* in both objects. That's because it's only one object but two pointers to the memory address in the Call Stack. The value in this memory address references to an address in the Heap *to the actual object stored in memory*. The object itself is not replicated, it's the same one, it's only one. The pointer is replicated. See the difference?
 
+### How to copy an object
+
+If you want to copy an object to create a new one, you should use the ```Object.assign({}, originalObject)``` function.
+
+Check out the example below.
+
+```javascript
+// Original object is 'john'
+const john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    age: 35,
+};
+
+// Let's copy the 'john' object
+const johnCopy = Object.assign({}, john);
+
+// Only NOW we can now change a property value (lastName) without
+// affecting the original Object (remember it would be the same object)
+johnCopy.lastName = 'Jones';
+
+console.log('John Last Name: ', john.lastName);             // > Smith
+console.log('JohnCopy Last Name: ', johnCopy.lastName);     // > Jones
+```
+But, beware: **this Object.assign function only makes a shallow copy, not a deep clone**. To put this simply: if we had an object inside an object... it would not work. It would only make an actual copy on the first level (outer object).
