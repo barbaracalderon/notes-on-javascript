@@ -14,7 +14,7 @@ But here's another one:
 ```
 "Javascript is a high-level, prototype-based object-oriented, multi-paradigm,
 interpreted or just-in-time compiled, dynamic, single-threaded,
-gargabe-collected programming language with first-class functions and a 
+gargabe-collected programming language with first-class functions and a
 non-blocking event loop concurrecy model."
 - Jonas Schmedtmann.
 ```
@@ -61,9 +61,9 @@ More on this later.
 
 ## First-class functions
 
-Functions are treated as variables. We can pass them into other functions as parameters, and return them from functions. 
+Functions are treated as variables. We can pass them into other functions as parameters, and return them from functions.
 
-*This allows functional programming to happen.*
+_This allows functional programming to happen._
 
 ## Dynamic
 
@@ -71,7 +71,7 @@ Remember dynamic data types? Javascript is a dynamically-typed language. The dat
 
 ## Single-threaded
 
-*A thread is a set of instructions that is executed in the computer CPU. It's where our code is executed in the machine processor.*
+_A thread is a set of instructions that is executed in the computer CPU. It's where our code is executed in the machine processor._
 
 "Concurrency model" is how the Javascript Engine handles multiple tasks happening at the same time.
 
@@ -92,12 +92,13 @@ Should make sense now.
 ```
 "Javascript is a high-level, prototype-based object-oriented, multi-paradigm,
 interpreted or just-in-time compiled, dynamic, single-threaded,
-gargabe-collected programming language with first-class functions and a 
+gargabe-collected programming language with first-class functions and a
 non-blocking event loop concurrecy model."
 - Jonas Schmedtmann.
 ```
 
 ---
+
 # PT: Visão Geral do JavaScript
 
 O que é Javascript?
@@ -110,18 +111,20 @@ Nossa primeira definição era:
 "Javascript é uma linguagem de programação de alto-nível, orientada-a-objetos, multi-paradigmática."
 - Jonas Schmedtmann.
 ```
+
 Mas aqui vai outra definição:
 
 ```
 // (Tradução minha em PT, não do autor original)
 
-"Javascript é uma linguagem de programação de alto-nível, 
-orientada a objetos baseada em protótipos, multi-paradigmática, 
-interpretada ou rapidamente compilada, dinâmica, de único-fio 
-e coletora de lixo com funções de primeira-classe e um modelo 
+"Javascript é uma linguagem de programação de alto-nível,
+orientada a objetos baseada em protótipos, multi-paradigmática,
+interpretada ou rapidamente compilada, dinâmica, de único-fio
+e coletora de lixo com funções de primeira-classe e um modelo
 de simultaneidade com laço de evento não-bloqueador."
 - Jonas Schmedtmann.
 ```
+
 Muita coisa.
 
 Vamos quebrar a definição acima em pequenos pedaços e falar sobre eles.
@@ -132,13 +135,13 @@ Computadores precisam de hardware para trabalhar. As linguagens de baixo-nível 
 
 ## Coletora-de-lixo
 
-O "Coletor de Lixo" é um algoritmo dentro do motor Javascript que lida com os recursos de computador automaticamente ao "limpar" a memória pra que não precisamos fazer isso manualmente. 
+O "Coletor de Lixo" é um algoritmo dentro do motor Javascript que lida com os recursos de computador automaticamente ao "limpar" a memória pra que não precisamos fazer isso manualmente.
 
 ## Interpretada ou rapidamente compilada
 
 Computadores só entendem 1 e 0.
 
-Todo programa precisa se converter em 1 e 0 para que as máquinas possam entendê-lo. Isso significa que todo código precisa ser traduzido para a máquina em 1 e 0. Javascript lida com essa tradução internamente em seu Motor. 
+Todo programa precisa se converter em 1 e 0 para que as máquinas possam entendê-lo. Isso significa que todo código precisa ser traduzido para a máquina em 1 e 0. Javascript lida com essa tradução internamente em seu Motor.
 
 ## Multi-paradigmática
 
@@ -166,15 +169,15 @@ Mais sobre isso nas anotações à frente.
 
 Funções são tratadas como variáveis em Javascript. Nós podemos passar uma função como argumento de outra função, e também podemos retornar uma função de outra função.
 
-*Isso permite a programação funcional acontecer.*
+_Isso permite a programação funcional acontecer._
 
 ## Dinâmica
 
-Lembra da tipagem dinâmica? O Javascript é uma linguagem de tipagem dinâmica. O tipo de dado de um valor em uma variável pode ser automaticamente mudado. 
+Lembra da tipagem dinâmica? O Javascript é uma linguagem de tipagem dinâmica. O tipo de dado de um valor em uma variável pode ser automaticamente mudado.
 
 ## De fio-único
 
-*Um fio é um conjunto de instruções que é executado na CPU do computador. É onde o nosso código é executado no processador da máquina.*
+_Um fio é um conjunto de instruções que é executado na CPU do computador. É onde o nosso código é executado no processador da máquina._
 
 "Modelo de simultaneidade" é como o motor do Javascript lida com múltiplas atividades acontecendo ao mesmo tempo.
 
@@ -184,7 +187,7 @@ Porque Javascript **executa em um único-fio**, então ele só consegue **fazer 
 
 E uma atividade de longo-prazo? Uma atividade que precisasse de muito, muito tempo para ser concluída?
 
-Para que isso bloquearia o fio único. Entretanto, nós queremos um comportamento de não-bloqueio desse fio único! Nós conseguimos isso usando um **laço de eventos**. 
+Para que isso bloquearia o fio único. Entretanto, nós queremos um comportamento de não-bloqueio desse fio único! Nós conseguimos isso usando um **laço de eventos**.
 
 Ao usar um laço de eventos, ele **executa uma atividade de longo-prazo "por baixo dos panos" e devolve a conclusão ao fio principal depois que terminar de executar.**
 
@@ -195,10 +198,10 @@ Deve fazer sentido agora.
 ```
 // (Tradução minha em PT, não do autor original)
 
-"Javascript é uma linguagem de programação de alto-nível, 
-orientada a objetos baseada em protótipos, multi-paradigmática, 
-interpretada ou rapidamente compilada, dinâmica, de único-fio 
-e coletora de lixo com funções de primeira-classe e um modelo 
+"Javascript é uma linguagem de programação de alto-nível,
+orientada a objetos baseada em protótipos, multi-paradigmática,
+interpretada ou rapidamente compilada, dinâmica, de único-fio
+e coletora de lixo com funções de primeira-classe e um modelo
 de simultaneidade com laço de evento não-bloqueador."
 - Jonas Schmedtmann.
 ```
