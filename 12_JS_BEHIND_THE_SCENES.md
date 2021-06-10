@@ -346,10 +346,10 @@ O que está dentro de um CE?
 Itens | Exemplos | Em Arrow Functions
 :---- | :------- | :-----------------
 Ambiente da Variável | declarações de let, const e var; funções; objetos de argumento | NÃO (para "objetos de argumento") e SIM (para todo o resto)
-Cadeia de Escopo | Basicamente são as referências para as variáveis localizadas fora da função atual | SIM
+Cadeia de Escopos | Basicamente são as referências para as variáveis localizadas fora da função atual | SIM
 Palavra-chave "this" | Vem mais detalhes nesse arquivo | NÃO
 
-Todos os três, ambiente de variável, cadeia de escopo e palavra-chave "this", são criados durante a "fase de criação" - bem antes da execução.
+Todos os três, ambiente de variável, cadeia de escopos e palavra-chave "this", são criados durante a "fase de criação" - bem antes da execução.
 
 ### Call Stack em detalhes
 
@@ -357,7 +357,7 @@ A Call Stack é o "lugar" em que CEs são empilhadas uma em cima das outras **pa
 
 ## 3. Scoping e Escopo em JS: conceitos
 
-Cada CE tem um ambiente da variável, uma cadeia de escopo e a palavra-chave "this". 
+Cada CE tem um ambiente da variável, uma cadeia de escopos e a palavra-chave "this". 
 
 ### Conceitos
 
@@ -383,19 +383,19 @@ Escopo de Bloco | Tudo que tá entre as chaves (exemplo, um bloco if, um bloco f
 
 *PS: variáveis var apenas ligam pra escopo de função e não escopo de bloco.*
 
-### Cadeia de Escopo
+### Cadeia de Escopos
 
-O procedimento para acessar uma variável é chamado de "procurar uma variável na cadeia de escopo". Cadeia aqui no sentido de "cadeia alimentar" mesmo. Isso significa que um escopo em particular tem acesso a variáveis de todos os escopos mais de fora. O contrário não é verdade. **Atenção nisso aqui**. 
+O procedimento para acessar uma variável é chamado de "procurar uma variável na cadeia de escopos". Cadeia aqui no sentido de "cadeia alimentar" mesmo. Isso significa que um escopo em particular tem acesso a variáveis de todos os escopos mais de fora. O contrário não é verdade. **Atenção nisso aqui**. 
 
 Você consegue acessar o escopo-pai do escopo-atual mas não consegue acessar o escopo-filho do escopo-atual. 
 
 Importante notar: *```let``` e ```const``` são ESCOPO DE BLOCO enquanto que o ```var``` é ESCOPO DE FUNÇÃO.*
 
-A Cadeia de Escopo não tem nada a ver com **ordem** em que as funções são invocadas. A Cadeia de Escopo em um determinado escopo é igual a adicionar **todos os ambientes de variável** de todos os escopos-pai. 
+A Cadeia de Escopos não tem nada a ver com **ordem** em que as funções são invocadas. A cadeia de escopos em um determinado escopo é igual a adicionar **todos os ambientes de variável** de todos os escopos-pai. 
 
-## 4. Ambiente da Variável: Hoisting e ZTM
+## 4. Ambiente da Variável: Hoisting e ZMT
 
-Lembrando: EC é composto de "ambiente da variável", "cadeia de escopo" e "palavra-chave this". Essa parte agora é sobre ambiente da variável - especialmente sobre "hoisting" ("içando") e a Zona Temporal Morta. 
+Lembrando: EC é composto de "ambiente da variável", "cadeia de escopos" e "palavra-chave this". Essa parte agora é sobre ambiente da variável - especialmente sobre "hoisting" ("içando") e a Zona da Morte Temporal. 
 
 Como as variáveis são criadas em JS?
 
@@ -407,7 +407,7 @@ O que | Tem hoisting? | Valor inicial | Escopo
 :---- | :------------ | :------------ | :-------
 Declaração de função | SIM | Função atual | Escopo de bloco (verdadeiro para 'strict mode')
 Variáveis var | SIM | undefined | Escopo de função
-Variáveis let e const | NÃO - (tecnicamente sim mas não na prática) | \<uninitiallized>, Zona Morta Temporal (ZMT) | Escopo de bloco
+Variáveis let e const | NÃO - (tecnicamente sim mas não na prática) | \<uninitiallized>, Zona da Morte Temporal (ZMT) | Escopo de bloco
 Expressões de função e Arrow functions | Depende de como foi declarado, se foi com var ou let/const | Depende | Depende
 
 A ZMT é o espaço de quando uma variável é invocada até quando ela é realmente definida no código. Pra que ter isso? Porque torna mais fácil evitar e pegar erros -> ser capaz de acessar variáveis antes de declará-las é uma má-prática e deve ser evitada. Isso torna as variáveis const funcionarem. 
@@ -416,7 +416,7 @@ Por que ter hoisting? Porque tornou funções úteis antes da sua declaração. 
 
 ## 5. A Palavra-chave "This"
 
-Lembrando: EC é composto de "ambiente da variável", "cadeia de escopo" e "palavra-chave this". Essa parte agora é sobre o último ponto.
+Lembrando: EC é composto de "ambiente da variável", "cadeia de escopos" e "palavra-chave this". Essa parte agora é sobre o último ponto.
 
 O que é o this?
 
