@@ -234,6 +234,8 @@ console.log("JohnCopy Last Name: ", johnCopy.lastName); // > Jones
 
 But, beware: **this Object.assign function only makes a shallow copy, not a deep clone**. To put this simply: if we had an object inside an object... it would not work. It would only make an actual copy on the first level (outer object).
 
+Another way to make the same copies is using the Spread Operator. Check in the next files.
+
 ---
 
 # PT: Como JavaScript Funciona por Trás dos Panos
@@ -483,3 +485,5 @@ console.log("JohnCopy Last Name: ", johnCopy.lastName); // > Jones
 ```
 
 Mas, cuidado: **essa função Object.assign apenas faz uma cópia rasa, não um clone profundo**. Sendo clara: se a gente tivesse um objeto dentro do objeto (por exemplo, um array dentro do objeto 'john' -> array é um objeto em JS)... não funcionaria essa cópia. Apenas faria uma cópia do primeiro nível (o objeto de fora, 'john').
+
+Outra forma de fazer as mesmas cópias é usar o Spread Operator. Olhar nos arquivos posteriores sobre ele.
