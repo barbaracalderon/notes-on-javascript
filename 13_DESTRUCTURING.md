@@ -1,4 +1,4 @@
-# Destructuring Arrays and Objects
+# EN: Destructuring Arrays and Objects
 
 It's a way to unpack values stored inside Arrays or Objects into separate variables.
 
@@ -152,7 +152,7 @@ restaurant.orderDelivery{
 
 ---
 
-# Desestruturando (Destructuring) Arrays e Objetos
+# PT: Desestruturando (Destructuring) Arrays e Objetos
 
 A tradução é "desestruturando" mas vou utilizar o termo em inglês "destructuring" mesmo. É uma **forma de desempacotar valores guardados**, dentro de Arrays ou Objetos, em variáveis separadas.
 
