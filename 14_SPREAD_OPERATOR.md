@@ -6,7 +6,7 @@ It's a bit like destructuring because it extracts values from **iterables AND ob
 
 **ITERABLES: arrays, strings, maps, sets.**
 
- The main difference between destructuring and the spread operator is the latter takes **all the elements** from inside the iterable and **does not store them into new variables**.
+The main difference between destructuring and the spread operator is the latter takes **all the elements** from inside the iterable and **does not store them into new variables**.
 
 It's specially useful when copying an array and adding something extra to it. It can also be passed as a function parameter.
 
