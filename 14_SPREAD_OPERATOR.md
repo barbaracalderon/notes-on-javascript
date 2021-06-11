@@ -89,7 +89,9 @@ console.log(restaurantCopy.name);       // > Ristorante Roma
 console.log(restaurant.name);           // > Classico Italiano
 
 ```
+
 ---
+
 # PT: O Operador "Spread" ...
 
 O Operador Spread é simbolizado com três pontos.
