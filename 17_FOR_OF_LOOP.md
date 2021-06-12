@@ -49,10 +49,12 @@ for (const [i, elemen] of menu.entries()) {
 // > 5: Pasta
 // > 6: Risotto
 ```
+
 ---
+
 # EN: O Laço "For Of"
 
-É recente, de 2020. É um novo jeito de percorrer um array. 
+É recente, de 2020. É um novo jeito de percorrer um array.
 
 ```javascript
 // Objeto 'restaurant'
@@ -67,7 +69,7 @@ const restaurant = {
 // Vamos unir todos os menus:
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-// Vamos iterar por todos os itens do menu: 
+// Vamos iterar por todos os itens do menu:
 for (const item of menu) console.log(item);
 // > Foccacia
 // > Bruschetta
