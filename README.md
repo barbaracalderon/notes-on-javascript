@@ -50,6 +50,6 @@ ARQUIVOS | CONTEÚDOS
 11_JS_OVERVIEW.md | Definição de JavaScript; alto-nível; coleta-de-lixo; interpretada ou rapidamente compilada; multi-paradigmática; orientado-a-objetos baseada em protótipos; funções de primeira classe; dinâmica; de fio-único
 12_JS_BEHIND_THE_SCENES | como Javascript funciona por baixo dos panos; o motor javascript e o tempo de execução; compilação vs. interpretação; como o Motor executa JS: os quatro passos (analisar -> compilar -> executar -> otimizar); tempo de execução no navegador; contexto de execução (CE) e a call stack; scoping e escopo em JS: escopo global, escopo da função, escopo de bloco; a cadeia de escopos; ambiente da variável: hoisting e a Zona da Morte Temporal (ZMT); a palavra-chave "this"; tipos primitivo vs. tipos referenciais (objetos); como copiar um objeto (cópia rasa, não uma clonagem profunda)
 13_DESTRUCTURING.md | Arrays; Objects;
-
+14_SPREAD_OPERATOR.md | The Spread Operator `...`; join two arrays; copy an array; iterables; spread operator passed as a function parameter; copy an object; shallow copies
 
 Continua... | ...
