@@ -51,5 +51,7 @@ ARQUIVOS | CONTEÚDOS
 12_JS_BEHIND_THE_SCENES | como Javascript funciona por baixo dos panos; o motor javascript e o tempo de execução; compilação vs. interpretação; como o Motor executa JS: os quatro passos (analisar -> compilar -> executar -> otimizar); tempo de execução no navegador; contexto de execução (CE) e a call stack; scoping e escopo em JS: escopo global, escopo da função, escopo de bloco; a cadeia de escopos; ambiente da variável: hoisting e a Zona da Morte Temporal (ZMT); a palavra-chave "this"; tipos primitivo vs. tipos referenciais (objetos); como copiar um objeto (cópia rasa, não uma clonagem profunda)
 13_DESTRUCTURING.md | Arrays; Objects;
 14_SPREAD_OPERATOR.md | The Spread Operator `...`; join two arrays; copy an array; iterables; spread operator passed as a function parameter; copy an object; shallow copies
+15_REST_PATTERN | Inverse of Spread Operator; REST on left of = sign; SPREAD on right of = sign; both sides; objects; functions "rest parameters"
+16_SHORT_CIRCUITING_(AND_OR).md | logic operators `\|\|` and `&&`; The Nullish Coalescence Operator `??`
 
 Continua... | ...
