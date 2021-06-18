@@ -49,4 +49,7 @@ ARQUIVOS | CONTEÚDOS
 10_DOM.md | introdução; notas importantes PS; projeto [guess-my-number-game](https://github.com/barbaracalderon/guess-my-number-game); ```addEventListener```; lidando com eventos de clique; eventos de que tipo; reação (event handler) - uma função; nem sempre dá pra depender do DOM pra pegar variáveis de estado; variáveis de estado; manipulando CSS styles; projeto [modal-project-example](https://github.com/barbaracalderon/notes-on-javascript/tree/main/project-modal-example); manipulando classes com JS; evento global; pressionar a tecla 'ESC'; o ```querySelector``` e o ```querySelectorAll```; método toggle; função init; organização de código
 11_JS_OVERVIEW.md | Definição de JavaScript; alto-nível; coleta-de-lixo; interpretada ou rapidamente compilada; multi-paradigmática; orientado-a-objetos baseada em protótipos; funções de primeira classe; dinâmica; de fio-único
 12_JS_BEHIND_THE_SCENES | como Javascript funciona por baixo dos panos; o motor javascript e o tempo de execução; compilação vs. interpretação; como o Motor executa JS: os quatro passos (analisar -> compilar -> executar -> otimizar); tempo de execução no navegador; contexto de execução (CE) e a call stack; scoping e escopo em JS: escopo global, escopo da função, escopo de bloco; a cadeia de escopos; ambiente da variável: hoisting e a Zona da Morte Temporal (ZMT); a palavra-chave "this"; tipos primitivo vs. tipos referenciais (objetos); como copiar um objeto (cópia rasa, não uma clonagem profunda)
+13_DESTRUCTURING.md | Arrays; Objects;
+
+
 Continua... | ...
