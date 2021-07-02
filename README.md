@@ -22,6 +22,7 @@
 10_DOM.md | introduction; import PS notes; [guess-my-number-game](https://github.com/barbaracalderon/guess-my-number-game) project; ```addEventListener```; handling click events; events of what kind; reaction (function); DOM not always reliable to grab state variables; manipulating CSS styles; [modal-project-example](https://github.com/barbaracalderon/notes-on-javascript/tree/main/project-modal-example); manipulate classes with JS; global events; press 'ESC'; ```querySelector``` and ```querySelectorAll```; the toggle method; Init function; code organization
 11_JS_OVERVIEW.md | JavaScript definition; high-level; garbage-collected; interpreted or just-in-time compiled; multi-paradigm; prototype-based object oriented; first-class functions; dynamic; single-threaded
 12_JS_BEHIND_THE_SCENES.md | how Javascript works behind the scenes; the javascript engine and runtime; compilation vs. interpretation; how the Engine executes JS: the four steps (parse -> compile -> execute -> optimize); runtime in the browser; execution context (EC) and the call stack; scoping and scope in JS: global scope, function scope, block scope; the scope chain; variable environment: hoisting and Temporal Dead Zone (TDZ); the "this" keyword; primitive types vs. reference types (objects); how to copy an object (shallow copy, not deep clone)
+13_DESTRUCTURING.md | Destructuring Arrays and Objects
 To be continued... | ...
 
  ---
