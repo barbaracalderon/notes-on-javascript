@@ -25,6 +25,7 @@
 13_DESTRUCTURING.md | Destructuring Arrays and Objects
 14_SPREAD_OPERATOR.md | `...`, join arrays, spread operator passed as a function parameter, objects
 15_REST_PATTERN.md | What is rest pattern; compare Spread Operator and Rest Pattern; objects; functions
+16_SHORT_CIRCUITING.md | `and` operator; `or` operator; the Nullish Coalescing Operator
 To be continued... | ...
 
  ---
