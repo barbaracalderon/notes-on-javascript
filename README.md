@@ -26,6 +26,7 @@
 14_SPREAD_OPERATOR.md | `...`, join arrays, spread operator passed as a function parameter, objects
 15_REST_PATTERN.md | What is rest pattern; compare Spread Operator and Rest Pattern; objects; functions
 16_SHORT_CIRCUITING.md | `and` operator; `or` operator; the Nullish Coalescing Operator
+17_FOR_OF_LOOP.md | new way to loop through an array; unite menus; loop thru all menus; unpack menus
 To be continued... | ...
 
  ---
