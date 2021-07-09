@@ -71,7 +71,7 @@ console.log(guestsCorrect); // > 0
 
 ---
 
-# Circuito Curto (Short Circuiting)
+# PT: Circuito Curto (Short Circuiting)
 
 Tradução livre aqui.
 
