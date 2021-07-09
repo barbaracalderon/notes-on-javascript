@@ -52,7 +52,7 @@ In order to make it all so fast, the file is compiled to an un-optimized version
 
 4. So, the fourth step is to **optimize** the code, as it is executed.
 
-Just as seen above. This is what makes modern Engines so fast. All this happens in special threads that we can't access from code: completely separated from the main thread where we work in our code.
+Just as seen above. This is what makes modern Engines so fast. All this happens in special threads that we can't access from code: **completely separated from the main thread where we work in our code**.
 
 ### Runtime in the Browser
 
@@ -70,7 +70,7 @@ For example, when we place an addEventListener in an HTML element on DOM. Suppos
 
 The Event Loop is essential for the non-blocking concurrency model. It is a fundamental piece of JavaScript development.
 
-_PS: The Runtime can also happen outside the browser, for example, in the Node.js. In this case, we say "Runtime in the Node.js". It's a bit differente because Node.js does not have a browser, so it does not have the Web APIs. Instead, we have "C++ bindings & thread pool"._
+_PS: The Runtime can also happen outside the browser, for example, in the Node.js. In this case, we say "Runtime in the Node.js". It's a bit different because Node.js does not have a browser, so it does not have the Web APIs. Instead, we have "C++ bindings & thread pool"._
 
 ## 2. Execution Context and the Call Stack
 
@@ -90,7 +90,9 @@ And the final step is **execution of functions and waiting for callbacks**. One 
 
 What is inside an EC?
 
-| Items                | Examples                                                                              | In Arrow Functions                                       |
+Each EC has a variable environment, a scope chain and a "this" keyword.
+
+| Items inside an EC               | Examples                                                                              | Is it also in Arrow Functions?                                       |
 | :------------------- | :------------------------------------------------------------------------------------ | :------------------------------------------------------- |
 | Variable Environment | let, const and var declarations; functions; arguments objects                         | NO (to "arguments objects") and YES (to everything else) |
 | Scope Chain          | Basically consists of references to variables located outside of the current function | YES                                                      |
@@ -124,9 +126,9 @@ Here's a table to remember.
 
 | Name           | In details                                                                                     | Variables accessibility                                                                                                                                      |
 | :------------- | :--------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Global Scope   | Top-level code; it resides outside any function or block code                                  | Variables declared here are accessible _everywhere_                                                                                                          |
-| Function Scope | Also called local scope; it resides inside a function                                          | Variables declared here are accessible only inside the function (not outside it)                                                                             |
-| Block Scope    | Everything inside curly braces (for example, if block, for loop block, while loop block, etc.) | Variables declared here are accessible only inside block (but this only applies to let and const variables). In strict mode, functions are also block scoped |
+| Global Scope   | Top-level code: it resides outside any function or block code                                  | Variables declared here are accessible _everywhere_                                                                                                          |
+| Function Scope | Also called local scope: it resides inside a function                                          | Variables declared here are accessible only inside the function (not outside it)                                                                             |
+| Block Scope    | Everything inside curly braces (for example, "if" block, "for-loop" block, "while-loop" block, etc.) | Variables declared here are accessible only inside block (but this only applies to let and const variables). In `strict` mode, functions are also block scoped |
 
 _PS: var variables only care about function scope and not block scope._
 
@@ -157,7 +159,7 @@ Hoisting makes some types of variables accessible/usable in the code before they
 | let and const variables                  | NO - (technically yes but not in practice) | \<unintiallized>, Temporal Dead Zone (TDZ) | Block scope                          |
 | Function expressions and Arrow functions | Depends if declared with var or let/const  | Depends                                    | Depends                              |
 
-The TDZ is the space from when the variable is called until it is actually defined in the code. Why have it? Because it makes easier to avoid and catch errors -> being able to access variables before declaration is a bad practice and should be avoided. It makes const variables actually work.
+**The TDZ is the space from when the variable is called until it is actually defined in the code**. Why have it? Because it makes easier to avoid and catch errors -> being able to access variables before declaration is a bad practice and should be avoided. It makes const variables actually work.
 
 Why have hoisting? Because it made functions useful before actual declaration. The var hoisting is just a byproduct.
 
@@ -189,6 +191,8 @@ There are four ways.
 
 **Important to note**: `this` does not point to the function itself and does not point to its variable environment.
 
+### Never use Arrow Functions as Methods
+
 You should never use an arrow function as a method. Precisely because of errors on "this" keyword.
 
 ## 6. Primitive Types vs. Reference Types (Objects)
@@ -199,13 +203,13 @@ Remember the Engine? It consists basically of two important structures: the Call
 
 **Primitive types are stored in the Call Stack**. The variable points to an address in memory which, in turn, stores a value.
 
-When we create another variable and replicates the first value to it, both variables point to the same address in memory. If we change one variable's value, then this variable will now point to another address in memory that holds the new value. The other variable will keep pointing to the previous memory address.
+When we create another variable and replicate the first value to it, both variables point to the same address in memory. If we change one variable's value, then this variable will now point to another address in memory that holds the new value. The other variable will keep pointing to the previous memory address.
 
 **Reference types (objects) are stored in the Heap**. The object points to an address in memory which, in turn, holds a value. _This value is a reference to a location in the Heap_ - that's why we call it "Reference" Types. But see? There's two steps here.
 
 When we create another object by replicating a previous object to this new one, both objects point to the same address in memory which, in turn, points to a specific address in the Heap. If we change anything inside this object, regardless in which pointer (or name object), **the change is done in the Heap**. And it's only ONE object in the Heap, with two pointers to a memory address... which in turn points to this ONE object in the Heap.
 
-That's why if we change an object property, it changes _apparently_ in both objects. That's because it's only one object but two pointers to the memory address in the Call Stack. The value in this memory address references to an address in the Heap _to the actual object stored in memory_. The object itself is not replicated, it's the same one, it's only one. The pointer is replicated. See the difference?
+That's why if we change an object property, it changes _apparently_ in both objects. That's because it's only one object but two pointers to the memory address in the Call Stack. The value in this memory address references to an address in the Heap _to the actual object stored in memory_. The object itself is not replicated, it's the same one, it's only one. The pointer is replicated. The reference is replicated. See the difference?
 
 ### How to copy an object
 
@@ -224,12 +228,11 @@ const john = {
 // Let's copy the 'john' object
 const johnCopy = Object.assign({}, john);
 
-// Only NOW we can now change a property value (lastName) without
-// affecting the original Object (remember it would be the same object)
+// Only NOW we can change a property value (lastName) without affecting the original Object (remember it would be the same object)
 johnCopy.lastName = "Jones";
 
-console.log("John Last Name: ", john.lastName); // > Smith
-console.log("JohnCopy Last Name: ", johnCopy.lastName); // > Jones
+console.log("John Last Name: ", john.lastName); // > John Last Name: Smith
+console.log("JohnCopy Last Name: ", johnCopy.lastName); // > JohnCopy Last Name: Jones
 ```
 
 But, beware: **this Object.assign function only makes a shallow copy, not a deep clone**. To put this simply: if we had an object inside an object... it would not work. It would only make an actual copy on the first level (outer object).

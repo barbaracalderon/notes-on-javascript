@@ -73,9 +73,9 @@ Remember dynamic data types? Javascript is a dynamically-typed language. The dat
 
 _A thread is a set of instructions that is executed in the computer CPU. It's where our code is executed in the machine processor._
 
-"Concurrency model" is how the Javascript Engine handles multiple tasks happening at the same time.
+"Concurrency Model" is how the Javascript Engine handles multiple tasks happening at the same time.
 
-Why would we need that the "concurrency model"?
+Why would we need the "concurrency model"?
 
 Because **Javascript runs in one single-thread**, so it can only do **one thing at a time**.
 
