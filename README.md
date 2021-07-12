@@ -28,6 +28,7 @@
 16_SHORT_CIRCUITING.md | `and` operator; `or` operator; the Nullish Coalescing Operator
 17_FOR_OF_LOOP.md | new way to loop through an array; unite menus; loop thru all menus; unpack menus
 18_ENHANCED_OBJECT_LITERALS.md | object inside object; writing methods; property name comes from an array
+19_OPTIONAL_CHAINGING.md | ...
 To be continued... | ...
 
  ---
@@ -59,4 +60,7 @@ ARQUIVOS | CONTEÚDOS
 14_SPREAD_OPERATOR.md | O Operador Spreadd `...`; juntar dois arrays; copiar um array; iteráveis; operador spread sendo passado como parâmetro de uma função; copiar um objeto; cópias rasas
 15_REST_PATTERN.md | o inverso do Operador Spread; REST na esquerda do sinal =; SPREAD à direita do sinal =; ambos os lados; objetos; funções do tipo "rest parameters"
 16_SHORT_CIRCUITING_(AND_OR).md | operadores lógicos `\|\|` e `&&`; o operador "nullish coalescent" `??`
+17_FOR_OF_LOOP.md | novo jeito de laçar um array; unir os menus; laçar por todos os menus; desempacotar menus
+18_ENHANCED_OBJECT_LITERALS.md | oobjeto dentro de objeto; métodos de escrita; nome da propriedade vem de um array
+19_OPTIONAL_CHAINGING.md | ...
 Continua... | ...
