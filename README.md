@@ -1,8 +1,6 @@
 # EN: Notes on JavaScript
 
- These are my general notes on JavaScript. 
- 
- It's like a notepad: useful to keep track of information and come back later to review and refresh my memory.
+These are my general notes on JavaScript from "The Completete Javascript Course" by Jonas Schmedtmann. It's like a notepad to come back and review.
 
  *It's under construction.*
 
@@ -34,9 +32,7 @@ To be continued... | ...
  ---
  # PT: Anotações sobre JavaScript
 
- Essas são as minhas anotações gerais sobre JavaScript.
-
- É como um caderno: útil para manter um registro das informações e voltar mais tarde para revisar e lembrar.
+ Essas são as minhas anotações gerais sobre JavaScript do curso "The Complete Javascript Course", Jonas Schmedtmann. Como um caderno para manter um registro das informações e voltar mais tarde para revisar.
 
  *Sob construção.*
 
